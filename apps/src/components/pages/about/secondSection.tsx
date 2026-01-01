@@ -12,12 +12,15 @@ if (typeof window !== "undefined") {
 
 export default function SecondSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const topLeftRef = useRef<HTMLDivElement>(null);
+  const bottomRightRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
       gsap.set(sectionRef.current, { yPercent: 100 });
+      gsap.set([topLeftRef.current, bottomRightRef.current], { opacity: 0, y: 20 });
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -36,7 +39,20 @@ export default function SecondSection() {
           yPercent: 0,
           duration: 2,
           ease: "none",
-        });
+        })
+        .to(topLeftRef.current, {
+          opacity: 1,
+          y: 0,
+          delay:1.8,
+          duration: 1,
+          ease: "expo.out"
+        }, "-=1.5")
+        .to(bottomRightRef.current, {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "expo.out"
+        }, "-=1.0");
     }, sectionRef);
 
     return () => ctx.revert();
@@ -54,6 +70,26 @@ export default function SecondSection() {
           className="object-cover"
           alt="Second section"
         />
+        
+        <div 
+          ref={topLeftRef}
+          className="absolute top-24 left-24 max-w-md z-10 text-white p-8 "
+        >
+          <h2 className="text-5xl font-bold mb-4">VISION</h2>
+          <p className="text-lg leading-relaxed">
+          To establish INVENTO as a national platform that ignites innovation, inspires young minds, and shapes the next generation of technologists and creators across India.
+          </p>
+        </div>
+
+        <div 
+          ref={bottomRightRef}
+          className="absolute bottom-24 right-24 max-w-md z-10 text-white text-right p-8"
+        >
+          <h2 className="text-5xl font-bold mb-4">MISSION</h2>
+          <p className="text-lg leading-relaxed">
+            To create a dynamic space for innovation, technology, and creativity through competitions, workshops, talks, and hands-on experiences.
+          </p>
+        </div>
       </div>
     </section>
   );
