@@ -32,7 +32,7 @@ export default function History() {
           ease: "none",
           scrollTrigger: {
             trigger: spacerRef.current,
-            start: "top center",
+            start: "top +=80%",
             end: "bottom bottom",
             scrub: 1,
             invalidateOnRefresh: true,

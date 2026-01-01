@@ -35,7 +35,7 @@ export default function HeroSection() {
           start: "top top",
           end: "+=500%",
           pin: true,
-          scrub: 1,
+          scrub: 2,
           anticipatePin: 1,
           invalidateOnRefresh: true,
           markers: true,
@@ -45,7 +45,7 @@ export default function HeroSection() {
       tl.to(navbarRef.current, {
         opacity: 0,
         duration: 0.3,
-        ease: "power2.out",
+        ease: "expo.out",
       }, 0)
         .to(textRef.current, {
           y: "-60vh",

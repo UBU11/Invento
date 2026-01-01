@@ -23,6 +23,7 @@ export default function About() {
     const updateScrollTrigger = () => {
       ScrollTrigger.refresh();
     };
+    gsap.ticker.lagSmoothing(0); 
     const timer = setTimeout(updateScrollTrigger, 100);
 
     return () => clearTimeout(timer);
@@ -32,10 +33,10 @@ export default function About() {
     <ReactLenis
       root
       options={{
-        lerp: 0.1,
+        lerp: 0.07,
         duration: 1.2,
         smoothWheel: true,
-        wheelMultiplier: 1,
+        wheelMultiplier: 1.2,
         touchMultiplier: 2,
         infinite: false,
       }}
