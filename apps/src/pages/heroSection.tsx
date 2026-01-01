@@ -56,7 +56,7 @@ export default function HeroSection() {
             duration: 0.5,
             ease: "power2.out",
           },
-          0.9
+          0.8
         )
         .to(
           cardsRef.current?.querySelectorAll(".card") || [],
@@ -67,9 +67,9 @@ export default function HeroSection() {
             duration: 0.6,
             ease: "power2.out",
           },
-          1
+          0.9
         )
-        .to({}, { duration: 1 });
+        .to({}, { duration: 2 });
     }, sectionRef);
 
     return () => ctx.revert();
