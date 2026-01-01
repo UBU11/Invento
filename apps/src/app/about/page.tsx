@@ -4,7 +4,7 @@ import HeroSection from "@/src/components/pages/about/heroSection";
 import SecondSection from "@/src/components/pages/about/secondSection";
 import History from "@/src/components/pages/about/history";
 import { ReactLenis, useLenis } from "lenis/react";
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -18,6 +18,13 @@ export default function About() {
       ScrollTrigger.update();
     }
   });
+
+  useLayoutEffect(() => {
+    if (typeof window !== "undefined") {
+      window.history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+    }
+  }, []);
 
   useEffect(() => {
     const updateScrollTrigger = () => {
