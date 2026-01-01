@@ -33,7 +33,7 @@ export default function History() {
           scrollTrigger: {
             trigger: spacerRef.current,
             start: "top +=80%",
-            end: "bottom bottom",
+            end: "bottom -=70%",
             scrub: 1,
             invalidateOnRefresh: true,
             markers: { startColor: "blue", endColor: "orange", fontSize: "18px", indent: 200 },
