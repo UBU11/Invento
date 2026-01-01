@@ -27,7 +27,7 @@ export default function SecondSection() {
           trigger: "#hero-section",
           start: "top top",
           end: "+=500%",
-          scrub: true,
+          scrub: true,  
           invalidateOnRefresh: true,
           markers: true,
         },
@@ -39,18 +39,19 @@ export default function SecondSection() {
           yPercent: 0,
           duration: 2,
           ease: "none",
+          stagger:0.1
         })
         .to(topLeftRef.current, {
           opacity: 1,
           y: 0,
           delay:1.8,
-          duration: 1,
+          duration: 2,
           ease: "expo.out"
         }, "-=1.5")
         .to(bottomRightRef.current, {
           opacity: 1,
           y: 0,
-          duration: 1,
+          duration: 2,
           ease: "expo.out"
         }, "-=1.0");
     }, sectionRef);
