@@ -28,7 +28,7 @@ export default function HeroSection() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=500%",
+          end: "+=1000%",
           pin: true,
           scrub: 2,
           anticipatePin: 1,
