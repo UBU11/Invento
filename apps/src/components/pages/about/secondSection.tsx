@@ -26,7 +26,7 @@ export default function SecondSection() {
         scrollTrigger: {
           trigger: "#hero-section",
           start: "top top",
-          end: "+=500%",
+          end: "+=1100%",
           scrub: true,  
           invalidateOnRefresh: true,
           markers: true,

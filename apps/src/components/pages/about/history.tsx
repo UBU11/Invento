@@ -32,8 +32,8 @@ export default function History() {
           ease: "none",
           scrollTrigger: {
             trigger: spacerRef.current,
-            start: "top +=80%",
-            end: "bottom -=70%",
+            start: "top center",
+            end: "bottom -=40%",
             scrub: 1,
             invalidateOnRefresh: true,
             markers: { startColor: "blue", endColor: "orange", fontSize: "18px", indent: 200 },
