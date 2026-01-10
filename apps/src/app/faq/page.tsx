@@ -5,7 +5,6 @@ import FAQBackground from "./components/FAQBackground";
 import FAQTopDecor from "./components/FAQTopDecor";
 import FAQBottomDecor from "./components/FAQBottomDecor";
 import FAQTable from "./components/FAQTable";
-import Navbar from "@/src/components/Navbar/navbar";
 import { akira } from "@/src/lib/fonts";
 
 const faqItems = [
@@ -28,7 +27,6 @@ export default function FAQPage() {
   
   return (
     <>
-      <Navbar />
       <FAQTopDecor />
       <FAQBottomDecor />
       <main className="relative h-screen overflow-hidden">
