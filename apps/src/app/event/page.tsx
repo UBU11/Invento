@@ -1,19 +1,11 @@
-import {
-  EventScheduleHeader,
-  EventScheduleFilters,
-  EventScheduleList,
-} from "../../components/events"
+import EventTable from "@/src/components/events/EventTable"
 
-import { EventProvider } from "@/src/context/EventContext"
-
-export default function EventPage() {
+export default function EventsPage() {
   return (
-    <EventProvider>
-      <main>
-        <EventScheduleHeader />
-        <EventScheduleFilters />
-        <EventScheduleList />
-      </main>
-    </EventProvider>
+    <div className="w-full">
+      <div className="ml-[20%] pr-10">
+        <EventTable />
+      </div>
+    </div>
   )
 }

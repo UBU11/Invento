@@ -1,10 +1,16 @@
+export type EventCategory =
+  | "WORKSHOP"
+  | "TECH"
+  | "GENERAL"
+  | "SAPTHA"
+  | "NATYA"
+
 export interface Event {
   id: string
   title: string
   description: string
-  date: string
+  category: EventCategory
   time: string
-  location: string
-  category: string
-  isLive: boolean
+  venue: string
+  poster: string
 }

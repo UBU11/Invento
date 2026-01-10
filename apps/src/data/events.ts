@@ -3,22 +3,22 @@ import { Event } from "@/src/types/event"
 export const eventsData: Event[] = [
   {
     id: "1",
-    title: "InvenTo Launch",
-    description: "Official launch of InvenTo platform",
-    date: "2026-01-15",
-    time: "10:00 AM",
-    location: "Virtual",
-    category: "Launch",
-    isLive: true,
+    title: "INTER COLLEGE DANCE",
+    description:
+      "Get ready for a head start to ADNIGHT 2025! We kick off with an exclusive opening program.",
+    category: "NATYA",
+    time: "01 TO 2:30 PM",
+    venue: "PG SEMINAR HALL CS 101",
+    poster: "/images/dance.jpg",
   },
   {
     id: "2",
-    title: "Tech Talk",
-    description: "Future of Web, AI & Startups",
-    date: "2026-01-20",
-    time: "5:00 PM",
-    location: "Offline",
-    category: "Talk",
-    isLive: false,
+    title: "INTER COLLEGE DANCE",
+    description:
+      "Get ready for a head start to ADNIGHT 2025! We kick off with an exclusive opening program.",
+    category: "WORKSHOP",
+    time: "01 TO 2:30 PM",
+    venue: "PG SEMINAR HALL CS 101",
+    poster: "/images/dance.jpg",
   },
 ]
