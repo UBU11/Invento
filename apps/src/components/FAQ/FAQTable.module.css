@@ -1,0 +1,188 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0px;
+  gap: 0;
+
+  position: relative;
+  width: 80%;
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: -150px auto 0;
+}
+
+.faqItem {
+  width: 100%;
+  min-height: 50px;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 12px 0;
+  flex-shrink: 0;
+}
+
+.itemContent {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-left: 40px;
+}
+
+.numberColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.questionButton {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+}
+
+.questionButton:hover {
+  color: #FF0000;
+}
+
+.questionNumber {
+  min-width: 30px;
+  font-weight: 800;
+  color: #fff;
+  font-size: 16px;
+  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.questionText {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+@media (min-width: 1025px) {
+  .questionText {
+    margin-left: 400px;
+  }
+  .answer {
+    margin-left: 500px;
+  }}
+
+.icon {
+  font-size: 24px;
+  color: #FF0000;
+  transition: transform 0.3s ease;
+  min-width: 30px;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  width: 28px;
+}
+
+.iconOpen {
+  transform: rotate(180deg);
+}
+
+.doubtText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.doubtText p {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  width: 150px;
+  line-height: 1.4;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.btnContact {
+  padding: 6px 12px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  font-family: 'Akira Expanded', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btnContact {
+  background: #FF0000;
+  color: #fff;
+  border-color: #FF0000;
+}
+
+.btnContact:hover {
+  background: #cc0000;
+}
+
+.answer {
+  margin-top: -60px;
+  padding: 12px 0;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.6;
+  animation: slideDown 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 100%;
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    height: 300px;
+  }
+
+  .questionButton {
+    font-size: 14px;
+  }
+
+  .doubtText {
+    display: none;
+  }
+}
