@@ -11,7 +11,7 @@ const HistoryCard: React.FC<HistoryCardProps> = ({ index }) => {
     const imagePath = `/history/img${index}.png`;
 
     return (
-        <div className="relative w-full h-full bg-[#1A1A1A] rounded-[24px] p-[6px] flex items-center justify-center overflow-hidden shadow-2xl border border-[#333]">
+        <div className="relative w-full h-full bg-[#171717] rounded-[24px] p-[6px] flex items-center justify-center overflow-hidden shadow-2xl border border-[#171717]">
 
             {/* Top Left Rune/Symbol Area */}
             <div className="absolute top-3 left-3 z-20 flex flex-col items-center gap-1 opacity-80">
@@ -29,7 +29,7 @@ const HistoryCard: React.FC<HistoryCardProps> = ({ index }) => {
             {/* Design Note: The frame "cuts" into the image at corners. 
           We can simulate this by having the image rounded but purely contained within the padding.
       */}
-            <div className="relative w-full h-full rounded-[20px] overflow-hidden bg-gray-800">
+            <div className="relative w-full h-full rounded-[20px] overflow-hidden bg-[#171717]">
                 <Image
                     src={imagePath}
                     alt={`History Card ${index}`}

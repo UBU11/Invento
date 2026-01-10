@@ -19,7 +19,7 @@ export default function History() {
     if (!spacerRef.current || !containerRef.current) return;
 
     const ctx = gsap.context(() => {
-      // 1. Enter Animation (Slide in from Right)
+      // 1. Enter Animation (Page Slide)
       gsap.fromTo(
         containerRef.current,
         {
@@ -38,14 +38,14 @@ export default function History() {
         }
       );
 
-      // 2. Infinite Carousel & Center Scaling (Only if cards exist)
-      // We use a timeout or verify cards are in DOM. context() handles cleanup.
+      // 2. Infinite Linear Carousel Logic
       const cards = gsap.utils.toArray<HTMLElement>(".history-card");
 
       if (cards.length > 0) {
         // Layout Config
         const totalCards = cards.length;
-        // Base width: 22vh (Reduced from 28vh)
+
+        // Base width: 22vh (Reduced size as per Step 1210)
         // 22vh in pixels:
         const vh = window.innerHeight;
         const vw = window.innerWidth;
@@ -63,8 +63,7 @@ export default function History() {
           top: 0,
         });
 
-        // 2a. Infinite Move RIGHT
-        // "+=" means items move Right.
+        // 2a. Infinite Move RIGHT (Left-to-Right Flow)
         gsap.to(cards, {
           x: `+=${cycleWidth}`,
           modifiers: {
@@ -77,7 +76,7 @@ export default function History() {
         });
 
         // 2b. Center Scale Logic
-        // Highlight "middle of the left part" -> 25% of viewport width
+        // Highlight at 25% of viewport width
         const centerPoint = vw * 0.25;
 
         gsap.ticker.add(() => {
@@ -98,8 +97,7 @@ export default function History() {
             if (dist < 175) {
               const progress = 1 - (dist / 175);
               const eased = gsap.parseEase("power2.in")(progress);
-              // Max Scale: 1.9x (Increased to compensate for smaller base)
-              // Base 30vh * 1.9 = 57vh (Similar to previous 37.5 * 1.5 = 56.25)
+              // Max Scale: 1.9x (Large highlighted state)
               scale = 1 + (0.9 * eased);
 
               if (scale > 1.05) zIndex = 10;
@@ -131,7 +129,7 @@ export default function History() {
         {/* TOP CONTENT AREA */}
         <div className="flex-1 w-full flex items-start justify-start pt-2 pl-4 pr-4 relative">
 
-          {/* Left: Intro Text & Logo - Pointer events none so we can click through to cards if needed */}
+          {/* Left: Intro Text & Logo */}
           <div className="absolute left-6 top-[35vh] flex flex-col justify-start gap-12 z-40 pointer-events-none">
             <div className="w-[120px] h-[120px] flex justify-center pointer-events-auto">
               <InventoLogo className="text-black" />
@@ -142,7 +140,7 @@ export default function History() {
           </div>
 
           {/* Middle: Cards Container (Absolute Track) */}
-          {/* Tripling density (18 cards) to ensure full horizontal fill for seamless looping */}
+          {/* using 18 cards for seamless linear looping */}
           <div ref={cardsRef} className="absolute top-0 left-0 w-full h-[60vh]">
             {[1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6].map((num, i) => (
               <div
