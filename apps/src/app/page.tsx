@@ -5,7 +5,6 @@ export default function HomePage() {
     return(
         <div>
             <HeroSection/>
-            <section className="min-h-screen"></section>
         </div>       
     );
 }
