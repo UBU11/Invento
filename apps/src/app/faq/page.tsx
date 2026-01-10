@@ -64,7 +64,7 @@ export default function FAQPage() {
       {isMobile && (
         <div style={{ position: 'fixed', bottom: '32px', left: '32px', zIndex: 50 }}>
           <p style={{ color: '#fff', fontSize: '14px', marginBottom: '12px', fontFamily: 'Inter', width: '128px' }}>Still have any doubts?</p>
-          <button style={{ width: '128px', backgroundColor: '#ef4444', color: '#fff', fontSize: '12px', fontWeight: 'bold', padding: '8px 12px', border: '1px solid #ef4444', borderRadius: '4px', cursor: 'pointer' }}>
+          <button style={{ width: '128px', backgroundColor: '#FF0000', color: '#fff', fontSize: '12px', fontWeight: 'bold', padding: '8px 12px', border: '1px solid #FF0000', borderRadius: '4px', cursor: 'pointer' }}>
             Contact us
           </button>
         </div>
