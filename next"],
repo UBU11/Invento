@@ -1,0 +1,315 @@
+[33mcommit 30c6370b55c6e84de0274fc431b6000121571da4[m[33m ([m[1;36mHEAD[m[33m)[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 3 14:31:00 2026 +0530
+
+    add(styles): add the css global variables in global.css
+
+[33mcommit e9705ba9db0643162da54bf5fc43857646e8ef9b[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 3 14:30:26 2026 +0530
+
+    feat: Created Home Page
+
+[33mcommit 1e13d4e6dbbd4d3ef7f86ad090c0a9eaa4634aa4[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 3 14:29:16 2026 +0530
+
+    chore(components): add pages directory for page components
+
+[33mcommit 72ea64882dfdcc1cf89cb939fb1e6de02388fca4[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 3 14:28:33 2026 +0530
+
+    chore(components): add pages directory for page components
+
+[33mcommit 13bf510421801b56cf3e0396c29876241e08911f[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 3 14:27:19 2026 +0530
+
+    feat: create HeroSection component
+
+[33mcommit 24cdc2cb3f0e693882516cb475e9829d41a097c6[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 3 14:26:34 2026 +0530
+
+    refactor: move Navbar component to ui/
+
+[33mcommit f02eaff16e298b31238c2f5bd832ae9395af41ad[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 3 14:25:11 2026 +0530
+
+    chore: add image and svg assets
+
+[33mcommit badcc7c50bc9abd1e1f2d3afbf22e9a4ad9ba08b[m[33m ([m[1;31morigin/feat/home[m[33m, [m[1;32mfeat/home[m[33m)[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 10 16:52:23 2026 +0530
+
+    remove: framer motion removed
+
+[33mcommit 2c62142db987aee7463f1cc4fa586d04b5d36221[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 10 16:51:00 2026 +0530
+
+    feat: home page Updated
+
+[33mcommit e9be9c5751da5f2d4bf5247248df053f7b7d9ae5[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 10 16:50:38 2026 +0530
+
+    remove: dark-mode option removed
+
+[33mcommit 739d1c23757b1ab7f9615dff0c3657cb08da11f1[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 10 16:50:12 2026 +0530
+
+    feat: Scroll Animation Implemented
+
+[33mcommit 4d1cf1fabfbb02ed53397d62f7cc13134d42f883[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 10 16:49:53 2026 +0530
+
+    add: Add the home Images
+
+[33mcommit 0bf8900b4178d81210eeb22d7ec915bee1ee9594[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 3 14:32:06 2026 +0530
+
+    chore(about): remove layout.tsx file
+
+[33mcommit f2b8e11219b33a7734a286f089e8ddd7c1594045[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 3 14:31:00 2026 +0530
+
+    add(styles): add the css global variables in global.css
+
+[33mcommit c56ed76942e1822fc403cdb6a83095ee5f6d1422[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 3 14:30:26 2026 +0530
+
+    feat: Created Home Page
+
+[33mcommit 2c5e5ebc9b205753fd1672f3c58304246f9fe674[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 3 14:30:05 2026 +0530
+
+    refactor: move about.tsx to components/pages
+
+[33mcommit ea04262fd3aed6cc130781b5a7b46b1369b05be1[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 3 14:29:16 2026 +0530
+
+    chore(components): add pages directory for page components
+
+[33mcommit 45036d9f64d1bf39a7b5daecf4cc69977683a53f[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 3 14:28:33 2026 +0530
+
+    chore(components): add pages directory for page components
+
+[33mcommit 933098effec2e7f30fbbc2b8207e58fccad14251[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 3 14:27:19 2026 +0530
+
+    feat: create HeroSection component
+
+[33mcommit 2f72a2626543b77971dfec2d3a182684a264e5ae[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 3 14:26:34 2026 +0530
+
+    refactor: move Navbar component to ui/
+
+[33mcommit 2702a85f049b6b12c7651f2898cb587925c08b70[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 3 14:25:11 2026 +0530
+
+    chore: add image and svg assets
+
+[33mcommit e94f36b700e0d2d7d36631a0fdc3b28ce52b9bd8[m
+Author: Muflih-uk <muhammedmuflih875@gmail.com>
+Date:   Sat Jan 3 14:24:33 2026 +0530
+
+    feat: add framer-motion animations
+
+[33mcommit 6b123901ba2d38d3d1441f4c6045a83dee08c02e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 2362197 e7858f8
+Author: Fahad <78952725+Ranger-NF@users.noreply.github.com>
+Date:   Sat Jan 3 10:10:32 2026 +0530
+
+    Merge pull request #4 from UBU11/feature/about
+    
+    feat: Add 'about', 'vision & mission' and transition to 'Our history'
+
+[33mcommit e7858f848bc37571b9632411167d43f2f4343bf6[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Fri Jan 2 15:05:47 2026 +0530
+
+    refactor: file structure, remove page folder and import all aboutsection component move inside component/aboutsection
+
+[33mcommit 67f444d4d3b293c3eba8a3a07a23135546b0df1d[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Fri Jan 2 14:50:45 2026 +0530
+
+    refactor:second page timeline
+
+[33mcommit 2b243c48d68a7a1cb171642ea0a2e00f12f33a9f[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Fri Jan 2 14:03:31 2026 +0530
+
+    refactor:extend the herosection scroll length
+
+[33mcommit c6e9cfca54e5e45a2b75695d0e423337dcdcdadd[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Fri Jan 2 13:20:56 2026 +0530
+
+    style: desktop and lg screen responsive issue is fixed
+
+[33mcommit aa98c3e64653c52c1fe5d7b918ddf29500bcc6ec[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Thu Jan 1 19:42:55 2026 +0530
+
+    fix: page refresh issue
+
+[33mcommit 5d5853d51df4b21ddd91f19af76dd2edeb10db45[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Thu Jan 1 19:32:53 2026 +0530
+
+    refactor: horizontal scrolling transition page length minimized
+
+[33mcommit 24a7f7add9073170160d57606e79cfa71f414dde[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Thu Jan 1 19:27:46 2026 +0530
+
+    refactor: horizontal transition timeline fixed
+
+[33mcommit 997b883e2bb621716c60b9872bd5b0b70975b653[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Thu Jan 1 19:12:11 2026 +0530
+
+    refactor: card timeline issue fixed
+
+[33mcommit db8db1623b8caae0a3f9366a460e102eb1872642[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Thu Jan 1 17:48:49 2026 +0530
+
+    feat: horizontal scrolling effect for History section
+
+[33mcommit 3f0af5cfdd793b88a63477e20cce61b55a796f2a[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Thu Jan 1 16:41:54 2026 +0530
+
+    feat: implemented mission and vision text with scroll Trigger effect
+
+[33mcommit 8af7a42f034fa7a8aa640838cda0416e75f40064[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Thu Jan 1 16:09:25 2026 +0530
+
+    feat: vertical parallex effect for page transition
+
+[33mcommit 9bc9822ddc2fb58122261ba74a4fdfbb92999447[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Thu Jan 1 15:02:59 2026 +0530
+
+    feat:Add pinned card in hero section using ScrollTrigger timeline
+
+[33mcommit a597f3099d154a8c6a45745c06b64d68c369ab1c[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Thu Jan 1 14:34:00 2026 +0530
+
+    feat: HeroSection scrolling effect is fixed, now its trigger with scroll effect
+
+[33mcommit ca31b04f01c6050c6f933ffbbbac0834a081cf31[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Thu Jan 1 13:50:39 2026 +0530
+
+    feat: Implemented lenis smooth scrolling for buttery scrolling effect
+
+[33mcommit 23621975c013e402ded66e68ec9a340cf5152c1e[m[33m ([m[1;32mmain[m[33m)[m
+Merge: 9581887 cc81730
+Author: Uvais J <108467041+UBU11@users.noreply.github.com>
+Date:   Wed Dec 31 19:03:26 2025 +0530
+
+    Merge pull request #3 from UBU11/feature/about
+    
+    Feature/about
+
+[33mcommit cc8173073878d312f72e0ec213c6303be5e7dec1[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Wed Dec 31 18:57:50 2025 +0530
+
+    chore:about page bg image fixing
+
+[33mcommit 30a236fdb053bec7d709d7552fecd795229ce8e7[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Wed Dec 31 01:16:49 2025 +0530
+
+    feat: navbar with logo
+
+[33mcommit 958188779d3e19008d40cdb4f36b0f5995b62424[m
+Merge: 456c6be 06c304a
+Author: Uvais J <108467041+UBU11@users.noreply.github.com>
+Date:   Wed Dec 31 00:26:33 2025 +0530
+
+    Merge pull request #1 from UBU11/feature/about
+    
+    Feature/about
+
+[33mcommit 06c304a1b27ad1e69e22303d162b5a73f0c2f688[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Wed Dec 31 00:24:56 2025 +0530
+
+    style: Hero text aligntment
+
+[33mcommit 0551afa8ade349a0b893b5c0e4e5911d92d0403f[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Tue Dec 30 23:40:46 2025 +0530
+
+    feat: bg image
+
+[33mcommit 456c6bea47c97cb5ec5f8d004ba068b4f0a40a3b[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Mon Dec 29 23:07:00 2025 +0530
+
+    chore: Text content does not match server-rendered HTML
+
+[33mcommit 497bc93d1ed63d363aef3d5f3014dc5253fc2e20[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Mon Dec 29 22:59:51 2025 +0530
+
+    refactor: folders and files are restructured
+
+[33mcommit 7de987bc6cc0954a7ba96ebedeb3d025ad297725[m
+Merge: 60d6119 54dc746
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Mon Dec 29 22:29:43 2025 +0530
+
+    feat: init next js
+
+[33mcommit 60d61198a00fefa4da11b8ef4140e60a21182973[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Mon Dec 29 22:28:12 2025 +0530
+
+    fix: merge conflicts
+
+[33mcommit 4b696e32f3473af2db58b30d30c7af3e2b07b024[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Mon Dec 29 22:23:35 2025 +0530
+
+    refactor: React VITE -> Next js
+
+[33mcommit 54dc7469ead077f1e30e50df816c1d035cfee357[m
+Author: Uvais J <108467041+UBU11@users.noreply.github.com>
+Date:   Sun Dec 28 12:15:05 2025 +0530
+
+    Update copyright holder in LICENSE file
+
+[33mcommit 552c98268f9498f30f2c27757f902d4e12f9aed3[m
+Author: UBU11 <uvaisubu11@gmail.com>
+Date:   Sun Dec 28 12:12:55 2025 +0530
+
+    initialized
+
+[33mcommit 62f371335fc4295bee5bb16a59160fbade94a3ed[m
+Author: Uvais J <108467041+UBU11@users.noreply.github.com>
+Date:   Sun Dec 28 11:49:00 2025 +0530
+
+    Initial commit
