@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './FAQTable.module.css';
 
 interface FAQItem {
@@ -15,6 +15,17 @@ interface FAQTableProps {
 
 export default function FAQTable({ items }: FAQTableProps) {
   const [expandedId, setExpandedId] = useState<number | null>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1025);
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const toggleExpand = (id: number) => {
     setExpandedId(expandedId === id ? null : id);
@@ -27,7 +38,7 @@ export default function FAQTable({ items }: FAQTableProps) {
           <div className={styles.itemContent}>
             <div className={styles.numberColumn}>
               <span className={styles.questionNumber}>{String(item.id).padStart(2, '0')}</span>
-              {expandedId === item.id && (
+              {expandedId === item.id && isDesktop && (
                 <div className={styles.doubtText}>
                   <p>Still have any doubts?</p>
                   <div className={styles.buttonGroup}>

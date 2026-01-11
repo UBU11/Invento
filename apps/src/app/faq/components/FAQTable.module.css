@@ -71,7 +71,22 @@
   font-weight: 800;
 }
 
-@media (min-width: 641px) {
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    margin: 300px auto 0;
+  }
+  .questionText {
+    margin-left: 150px;
+  }
+  .answer {
+    margin-left: 150px;
+  }
+  .doubtText {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) {
   .questionText {
     margin-left: 400px;
   }
@@ -141,7 +156,7 @@
 }
 
 .answer {
-  margin-top: -60px;
+  margin-top: 8px;
   padding: 12px 0;
   color: #fff;
   font-size: 16px;
@@ -151,6 +166,12 @@
   font-weight: 600;
   font-style: italic;
   margin-right: 50px;
+}
+
+@media (min-width: 1025px) {
+  .answer {
+    margin-top: -60px;
+  }
 }
 
 @keyframes slideDown {
