@@ -84,6 +84,20 @@
   }
 }
 
+@keyframes event-expand {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.animate-event-expand {
+  animation: event-expand 0.35s ease-out forwards;
+}
 
 @layer base {
   h1 {

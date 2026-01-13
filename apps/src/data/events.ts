@@ -9,7 +9,7 @@ export const eventsData: Event[] = [
     category: "NATYA",
     time: "01 TO 2:30 PM",
     venue: "PG SEMINAR HALL CS 101",
-    poster: "/images/dance.jpg",
+    poster: "/event/img.svg",
     day:1,
   },
   {
