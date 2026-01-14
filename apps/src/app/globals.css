@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: AkiraExpanded;
+  src: url('/AkiraExpanded-SuperBold.woff2') format('woff2');
+}
+
 @theme {
   --font-family-akira: var(--font-akira);
   --font-family-flood: var(--font-flood);

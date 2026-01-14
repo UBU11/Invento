@@ -28,7 +28,7 @@ const flood = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Invento",
   description: "next app",
 };
 
