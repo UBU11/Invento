@@ -9,6 +9,7 @@
     --font-family-akira: var(--font-akira);
     --font-family-flood: var(--font-flood);
     --font-family-urbanist: var(--font-urbanist);
+    --font-family-poppins: var(--font-poppins);
 }
 @keyframes fadeIn {
     to {
@@ -18,6 +19,10 @@
 
 .font-urbanist {
     font-family: var(--font-urbanist);
+}
+
+.font-poppins {
+    font-family: var(--font-poppins);
 }
 
 .animate-fadeIn {

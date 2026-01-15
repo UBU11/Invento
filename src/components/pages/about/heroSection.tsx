@@ -123,19 +123,18 @@ export default function HeroSection() {
 
         <div
           ref={storyRef}
-          className="absolute top-[25%] md:top-[30%] lg:top-1/3 left-[5vw] md:left-[10vw] max-w-[90vw] md:max-w-2xl lg:max-w-4xl xl:max-w-6xl z-10"
+          className="absolute top-[25%] xl:top-[28%] left-[2vw] md:left-[5vw] max-w-[75vw] md:max-w-2xl lg:max-w-4xl xl:max-w-6xl z-10"
         >
-          <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl md:mt-[5vh] mb-6 opacity-0 translate-y-10 leading-relaxed font-bold">
+          <p className="font-urbanist text-white text-base sm:text-lg md:text-xl lg:text-2xl md:mt-[5vh] mb-6 opacity-0 translate-y-10 leading-relaxed font-bold">
             Born in the year 2012,INVENTO is the national level annual
-            <br />
-            techno-management festival of Government Engineering <br />
-            College Palakkad.
+            techno-management festival of Government Engineering College
+            Palakkad.
           </p>
         </div>
 
         <div
           ref={cardsRef}
-          className="absolute bottom-4 sm:bottom-8 md:bottom-12 lg:bottom-20 left-1/2 -translate-x-1/2 w-full max-w-6xl px-4 md:px-8 z-10"
+          className="absolute top-[40%] xl:top-[50%] left-[2vw] md:left-[5vw] w-full max-w-6xl z-10"
         >
           <HeroSectionCard />
         </div>
