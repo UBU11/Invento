@@ -96,12 +96,22 @@ export default function HeroSection() {
       className="relative w-full h-screen bg-white overflow-hidden"
     >
       <div className="relative w-full h-full">
+        {/* Desktop Image */}
         <Image
-          src={"/about/main.jpg"}
+          src="/about/about-hero.jpg"
           fill
           priority
-          className="object-cover"
+          className="object-cover hidden sm:block"
           alt="Background"
+        />
+
+        {/* Mobile Image */}
+        <Image
+          src="/about/about-hero-mobile.jpg"
+          fill
+          priority
+          className="object-cover block sm:hidden"
+          alt="Background Mobile"
         />
         <div ref={navbarRef}>
           <Navbar />

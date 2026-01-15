@@ -15,6 +15,17 @@ const akira = localFont({
   display: "swap",
 });
 
+const urbanist = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Urbanist-VariableFont_wght.ttf",
+      weight: "100 900",
+    },
+  ],
+  variable: "--font-urbanist",
+  display: "swap",
+});
+
 const flood = localFont({
   src: [
     {
@@ -39,10 +50,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${flood.variable} ${akira.variable} antialiased`}>
-        <EventProvider>
-          {children}
-        </EventProvider>
+      <body
+        className={`${urbanist.variable} ${flood.variable} ${akira.variable} antialiased`}
+      >
+        <EventProvider>{children}</EventProvider>
       </body>
     </html>
   );
