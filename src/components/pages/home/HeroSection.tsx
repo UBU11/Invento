@@ -144,7 +144,6 @@ const HeroSection: React.FC = () => {
                 </div>
 
             </section>
-            <div className="h-[200vh]"></div>
         </>
     );
 }
