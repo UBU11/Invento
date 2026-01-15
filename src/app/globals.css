@@ -9,7 +9,10 @@
     --font-family-akira: var(--font-akira);
     --font-family-flood: var(--font-flood);
     --font-family-urbanist: var(--font-urbanist);
+<<<<<<< HEAD
     --font-family-poppins: var(--font-poppins);
+=======
+>>>>>>> 32b2a42 (refactor: Made first section of about page repsonsive)
 }
 @keyframes fadeIn {
     to {
@@ -19,10 +22,13 @@
 
 .font-urbanist {
     font-family: var(--font-urbanist);
+<<<<<<< HEAD
 }
 
 .font-poppins {
     font-family: var(--font-poppins);
+=======
+>>>>>>> 32b2a42 (refactor: Made first section of about page repsonsive)
 }
 
 .animate-fadeIn {
