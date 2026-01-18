@@ -3,7 +3,7 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
+
 import HistoryCards from "./HistoryComponents/HistoryCards";
 import HistoryCircularLogo from "./HistoryComponents/HistoryCircularLogo";
 import HistoryDetails from "./HistoryComponents/HistoryDetails";
@@ -52,8 +52,8 @@ export default function History() {
 
       if (page1) gsap.set(page1, { opacity: 0, y: 50 });
       if (page2) gsap.set(page2, { opacity: 0, y: 50 });
-      if (pagoda) gsap.set(pagoda, { opacity: 0 });
-      if (pattern) gsap.set(pattern, { opacity: 0 });
+      if (pagoda) gsap.set(pagoda, { opacity: 0, y: -100 }); // Start from Top
+      if (pattern) gsap.set(pattern, { opacity: 0, y: 100 }); // Start from Bottom
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -94,7 +94,7 @@ export default function History() {
       tl.to(title, {
          y: "-75vh", // Move up near top with gap
          x: 0,      // Keep horizontal alignment
-         scale: 0.9, // Kept larger based on user feedback
+         scale: 1, // Keep original size
          duration: 1.5,
          ease: "power2.inOut"
       }, "<");
@@ -119,10 +119,10 @@ export default function History() {
       
       // Animate Images IN (Synced with Text)
       if (pagoda) {
-          tl.to(pagoda, { opacity: 1, duration: 1.5, ease: "power2.out" }, "<");
+          tl.to(pagoda, { opacity: 1, y: 0, duration: 1.5, ease: "power2.out" }, "<");
       }
       if (pattern) {
-          tl.to(pattern, { opacity: 1, duration: 1.5, ease: "power2.out" }, "<");
+          tl.to(pattern, { opacity: 1, y: 0, duration: 1.5, ease: "power2.out" }, "<");
       }
 
       // Cushion for reading
@@ -153,6 +153,15 @@ export default function History() {
                 overflow: "hidden", // Ensure content doesn't ghost
                 duration: 1, 
                 ease: "power1.out" 
+            }, "<"); 
+         }
+
+         // Animate Pagoda slightly upward (Parallax)
+         if (pagoda) {
+            tl.to(pagoda, { 
+                y: "-7vh", 
+                duration: 2.5, 
+                ease: "power1.inOut" 
             }, "<"); 
          }
       }

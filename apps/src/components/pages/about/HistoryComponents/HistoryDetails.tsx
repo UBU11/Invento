@@ -8,12 +8,12 @@ export default function HistoryDetails() {
       {/* Images - Positioned Right of Screen (Corrected) */}
       {/* Images - Positioned Right of Screen (Corrected) */}
       {/* PAGODA IMAGE: Adjust 'top' to move up/down, 'right' for gap, 'w' for width */}
-      <div id="history-pagoda" className="hidden md:block absolute top-[-15vh] right-[5vw] w-[80vw] h-[110vh] pointer-events-none opacity-90 z-0">
+      <div id="history-pagoda" className="hidden md:block absolute top-[-15vh] right-[7vw] w-[80vw] h-[115vh] pointer-events-none opacity-90 z-0">
            <Image 
               src="/about/history/pagoda.png" 
               alt="Pagoda" 
               fill 
-              className="object-contain object-right-top"
+              className="object-contain object-top-right"
            />
       </div>
       <div id="history-pattern" className="hidden md:block absolute bottom-0 right-0 w-[35vw] h-[55vh] pointer-events-none opacity-80 z-0">
@@ -21,7 +21,7 @@ export default function HistoryDetails() {
               src="/about/history/pattern.png" 
               alt="Pattern" 
               fill 
-              className="object-contain object-right-bottom"
+              className="object-contain object-bottom-right"
            />
       </div>
 
@@ -30,24 +30,33 @@ export default function HistoryDetails() {
       <div id="history-content-wrapper" className="relative z-10 flex flex-col gap-16 md:gap-32 w-full mx-0 items-start pt-[35vh] md:pt-[30vh] pb-10 md:pb-20 pl-4 md:pl-[3vw] pr-[5vw]">
         
         {/* Page 1 Content */}
-        <div id="history-page-1" className="w-full md:w-[45%] flex flex-col gap-6 text-black mr-auto bg-white/50 backdrop-blur-sm md:bg-transparent rounded-lg p-4 md:p-0">
-          <p className="text-sm md:text-lg font-medium leading-relaxed">
+        {/* PAGE 1 CONTAINER: Adjust 'md:w-[55%]' to control the maximum width available for this section */}
+        <div id="history-page-1" className="w-full md:w-[55%] flex flex-col gap-6 text-black mr-auto bg-white/50 backdrop-blur-sm md:bg-transparent rounded-lg p-4 md:p-0">
+          
+          {/* PARAGRAPH 1: Adjust 'md:w-[85%]' to change width relative to container */}
+          <p className="text-sm md:text-lg font-medium leading-relaxed md:w-[85%]">
             <span className="font-extrabold">INVENTO</span> began with a spark—students who believed learning didn’t have to stop at classroom walls. What started as a small technical gathering soon revealed a bigger possibility: a space where curiosity could turn into creation.
           </p>
-          <p className="text-sm md:text-lg font-medium leading-relaxed">
+          
+          {/* PARAGRAPH 2: Takes full width of the container (WIDER than Para 1) */}
+          <p className="text-sm md:text-lg font-medium leading-relaxed w-full">
             As that idea grew, it took its first form as GHATECH—a multi-day technical exhibition that brought together students from multiple institutions. The involvement of nationally recognized organizations such as DRDO, along with early industry collaborators, marked a turning point. This was no longer just a campus initiative; it was gaining momentum beyond it.
           </p>
         </div>
 
         {/* Page 2 Content */}
-        <div id="history-page-2" className="w-full md:w-[45%] flex flex-col gap-6 text-black mr-auto bg-white/50 backdrop-blur-sm md:bg-transparent rounded-lg p-4 md:p-0">
-            <p className="text-sm md:text-lg font-medium leading-relaxed">
+        {/* PAGE 2 CONTAINER: Consistent max width with Page 1 */}
+        <div id="history-page-2" className="w-full md:w-[55%] flex flex-col gap-6 text-black mr-auto bg-white/50 backdrop-blur-sm md:bg-transparent rounded-lg p-4 md:p-0">
+            {/* PARA 1: 90% Width */}
+            <p className="text-sm md:text-lg font-medium leading-relaxed md:w-[90%]">
               Then came the transformation. Technology met creativity. Innovation shared the stage with art, performance, and culture. The festival evolved into Invento—a platform where ideas, expression, and identity could coexist. A space that proved students didn’t have to choose between logic and imagination—they could lead with both.
             </p>
-            <p className="text-sm md:text-lg font-medium leading-relaxed">
+            {/* PARA 2: 75% Width (Narrowest) */}
+            <p className="text-sm md:text-lg font-medium leading-relaxed md:w-full">
               With every edition, Invento grew bolder. Collaborations with institutions such as ISRO and professional bodies like the IEEE, along with participation from colleges across the country, shaped Invento into a national-level techno-cultural festival.
             </p>
-            <p className="text-sm md:text-lg font-medium leading-relaxed">
+            {/* PARA 3: Full Width (Widest) */}
+            <p className="text-sm md:text-lg font-medium leading-relaxed w-full">
               Today, Invento stands as an open platform—shaped by students, strengthened by collaboration, and driven by ideas that continue to redefine what’s possible. A journey still unfolding, with every edition adding a new chapter.
             </p>
         </div>
