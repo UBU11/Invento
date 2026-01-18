@@ -4,7 +4,7 @@ export default function HistoryDetails() {
   return (
     <div className="relative w-full h-full">
       {/* Images - Positioned Right */}
-      <div id="history-pagoda" className="hidden md:block absolute top-[-15vh] right-[7vw] w-[80vw] h-[115vh] pointer-events-none opacity-90 z-0">
+      <div id="history-pagoda" className="hidden md:block absolute top-[-15vh] right-[2vw] w-[65vw] h-[115vh] pointer-events-none opacity-90 z-0">
            <Image 
               src="/about/history/pagoda.png" 
               alt="Pagoda" 
