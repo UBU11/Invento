@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -12,6 +12,20 @@ interface ContactBackgroundProps {
 
 export default function ContactBackground({ sectionRef }: ContactBackgroundProps) {
   const bottomImageRef = useRef<HTMLImageElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if mobile on mount
+    setIsMobile(window.innerWidth < 1024);
+
+    // Handle resize
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const bottomImg = bottomImageRef.current;
@@ -82,6 +96,23 @@ export default function ContactBackground({ sectionRef }: ContactBackgroundProps
 
   return (
     <>
+      {/* Logo */}
+      <img
+        src="/contact/LOGO.webp"
+        alt="Invento Logo"
+        style={{
+          position: "absolute",
+          top: "80px",
+          right: isMobile ? "-300px" : "40px",
+          zIndex: 10,
+          pointerEvents: "none",
+          width: "auto",
+          height: "auto",
+          maxWidth: "550px",
+          padding: "20px",
+        }}
+      />
+
       <div
         style={{
           position: "absolute",
