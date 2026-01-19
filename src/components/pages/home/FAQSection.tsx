@@ -132,7 +132,7 @@ export default function FAQSection() {
           FAQ<span style={{ fontSize: "0.6em" }}>s</span>
         </h1>
 
-        <div className="relative z-10 px-4 h-full pt-64 pb-32">
+        <div className="relative z-10 px-4 h-full pt-8 md:pt-64 pb-32">
           <FAQTable items={faqItems} />
         </div>
 
