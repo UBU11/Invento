@@ -5,6 +5,11 @@
     src: url("/AkiraExpanded-SuperBold.woff2") format("woff2");
 }
 
+:root {
+    --invento-gray: #3e3e3e;
+    --invento-light-gray: #4e4e4e;
+}
+
 @theme {
     --font-family-akira: var(--font-akira);
     --font-family-flood: var(--font-flood);
