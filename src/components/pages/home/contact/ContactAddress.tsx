@@ -1,23 +1,29 @@
 import { akira } from "@/src/lib/fonts";
 
 export default function ContactAddress() {
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 1024;
+
   return (
     <p
       className={akira.className}
       style={{
         position: "absolute",
-        width: "598px",
-        height: "140px",
-        top: "30px",
-        right: "0",
+        width: isMobile ? "200px" : "598px",
+        height: "auto",
+        top: isMobile ? "300px" : "30px",
+        right: isMobile ? "20px" : "0",
+        left: isMobile ? "auto" : "auto",
         fontStyle: "normal",
         fontWeight: "800",
-        fontSize: "20px",
-        lineHeight: "30px",
+        fontSize: isMobile ? "12px" : "20px",
+        lineHeight: isMobile ? "20px" : "30px",
         color: "#FFFFFF",
         zIndex: 20,
         margin: 0,
-        padding: "20px",
+        padding: isMobile ? "10px" : "20px",
+        wordWrap: "break-word",
+        overflowWrap: "break-word",
+        textAlign: isMobile ? "left" : "left",
       }}
     >
       Government Engineering College Sreekrishnapuram, Palakkad, Kerala - 678633
