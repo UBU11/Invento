@@ -6,7 +6,7 @@ import Navbar from "@/src/components/ui/navbar/navbar";
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import HeroSectionCard from "@/src/components/pages/about/Cards/heroSectionCard";
+import HeroSectionCard from "./Cards/heroSectionCard";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);

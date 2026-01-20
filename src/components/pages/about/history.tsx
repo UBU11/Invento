@@ -77,30 +77,30 @@ export default function History() {
         </div>
 
         {/* Bottom: Static Elements */}
-        <div className="relative w-full h-[45%]">
+        <div className="relative w-full h-[45%] flex flex-col items-center md:block">
            
-           {/* Logo - Left */}
-           <div ref={logoRef} className="absolute left-[5vw] -top-40 origin-left scale-[0.6]">
+           {/* Logo - Centered below cards on mobile, Top-Left on desktop */}
+           <div ref={logoRef} className="relative md:absolute md:left-[5vw] md:-top-40 md:origin-left scale-[0.6] z-20">
               <HistoryCircularLogo />
            </div>
 
-           {/* Paragraph - Right/Center */}
+           {/* Paragraph - Right/Center (Hidden on Mobile for cleaner look, per ref) */}
            <div ref={topTextRef} className="absolute right-[5vw] top-0 max-w-md text-right hidden md:block">
               <p className="text-sm md:text-base font-medium text-black leading-relaxed">
                 Today, INVENTO stands as a symbol of creativity, innovation, and technical excellence, reflecting the spirit of GEC Palakkad.
               </p>
            </div>
 
-           {/* Left Description */}
+           {/* Left Description (Hidden on Mobile) */}
            <div ref={bottomTextRef} className="absolute left-[3vw] bottom-40 max-w-md hidden md:block">
              <p className="text-xs md:text-sm font-medium text-black leading-relaxed text-left">
                INVENTO has consistently served as a space for learning, experimentation, and collaboration.
              </p>
            </div>
 
-           {/* Main Title - Bottom Left */}
-           <div className="absolute bottom-4 left-[3vw] text-left">
-              <h1 className="text-[8vw] font-bold leading-none tracking-tighter opacity-100">
+           {/* Main Title - Bottom Centered on Mobile */}
+           <div className="relative md:absolute bottom-auto md:bottom-4 left-auto md:left-[3vw] mt-4 md:mt-0 text-center md:text-left">
+              <h1 className="text-[8vw] font-bold leading-none tracking-tighter opacity-100 whitespace-nowrap">
                 OUR HISTORY
               </h1>
            </div>

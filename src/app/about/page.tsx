@@ -30,7 +30,7 @@ export default function About() {
     const updateScrollTrigger = () => {
       ScrollTrigger.refresh();
     };
-    gsap.ticker.lagSmoothing(0);
+    gsap.ticker.lagSmoothing(0); 
     const timer = setTimeout(updateScrollTrigger, 100);
 
     return () => clearTimeout(timer);
