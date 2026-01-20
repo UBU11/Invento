@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import FAQTable from "@/src/components/pages/faq/FAQTable";
 import { akira } from "@/src/lib/fonts";
 
@@ -43,11 +43,91 @@ const faqItems = [
   },
 ];
 
+const animationStyles = `
+  @keyframes slideInFromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInDiagonal {
+    from {
+      opacity: 0;
+      transform: translate(100px, 100px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes slideInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+`;
+
 export default function FAQSection() {
   const [mounted, setMounted] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        } else {
+          setIsInView(false);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
 
   const isMobile =
@@ -55,7 +135,8 @@ export default function FAQSection() {
 
   return (
     <>
-      <section className="relative min-h-screen overflow-hidden">
+      <style>{animationStyles}</style>
+      <section className="relative min-h-screen overflow-hidden" ref={sectionRef}>
         <div
           style={{
             position: "absolute",
@@ -71,12 +152,13 @@ export default function FAQSection() {
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
+            animation: isInView ? "fadeIn 0.8s ease-in-out 0s forwards" : "none",
           }}
         />
 
         {/* Top Left Decoration */}
         <img
-          src="/faq/top-left.webp"
+          src={isMobile ? "/faq/top-left-mob.webp" : "/faq/top-left.webp"}
           alt=""
           style={{
             position: "absolute",
@@ -84,10 +166,11 @@ export default function FAQSection() {
             left: "0",
             zIndex: 5,
             pointerEvents: "none",
-            width: "100%",
-            maxWidth: isMobile ? "250px" : "426px",
+            width: isMobile ? "180px" : "426px",
             height: "auto",
-            aspectRatio: "426/343"
+            aspectRatio: "426/480",
+            animation: isInView ? "slideInFromLeft 0.8s ease-out 0.2s forwards" : "none",
+            opacity: isInView ? 1 : 0,
           }}
         />
 
@@ -104,7 +187,9 @@ export default function FAQSection() {
             width: "100%",
             maxWidth: isMobile ? "250px" : "426px",
             height: "auto",
-            aspectRatio: "426/343"
+            aspectRatio: "426/343",
+            animation: isInView ? "slideInDiagonal 0.8s ease-out 0.4s forwards" : "none",
+            opacity: isInView ? 1 : 0,
           }}
         />
 
@@ -115,7 +200,7 @@ export default function FAQSection() {
             width: "291px",
             height: "160px",
             left: isMobile ? "20px" : "250px",
-            top: isMobile ? "100px" : "120px",
+            top: isMobile ? "140px" : "120px",
             fontStyle: "normal",
             fontWeight: "800",
             fontSize: isMobile ? "50px" : "87.94px",
@@ -127,12 +212,20 @@ export default function FAQSection() {
             color: "#FF0000",
             margin: "0",
             zIndex: 10,
+            animation: isInView ? "slideInUp 0.8s ease-out 0.6s forwards" : "none",
+            opacity: isInView ? 1 : 0,
           }}
         >
           FAQ<span style={{ fontSize: "0.6em" }}>s</span>
         </h1>
 
-        <div className="relative z-10 px-4 h-full pt-8 md:pt-64 pb-32">
+        <div 
+          className="relative z-10 px-4 h-full pt-8 md:pt-64 pb-32"
+          style={{
+            animation: isInView ? "slideInDown 0.8s ease-out 0.8s forwards" : "none",
+            opacity: isInView ? 1 : 0,
+          }}
+        >
           <FAQTable items={faqItems} />
         </div>
 
