@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 
 type MenuBarProps = {
   onOpen: () => void;
@@ -7,16 +8,19 @@ type MenuBarProps = {
 
 export default function MenuBar({ onOpen }: MenuBarProps) {
   return (
-    <div className="flex w-fit gap-2 bg-(--invento-gray) p-1.5 rounded-xl items-center">
+    <div className="flex w-fit gap-2 bg-(--invento-gray) p-1.5 rounded-xl items-center z-200">
       {/* Invento Logo Button */}
-      <button className="relative h-12 w-12 bg-white rounded-md flex items-center justify-center hover:opacity-80 transition">
+      <Link
+        href="/"
+        className="relative h-12 w-12 bg-white rounded-md flex items-center justify-center hover:opacity-80 transition"
+      >
         <Image
           fill
           alt="Red Invento Logo"
           src="/invento-red-logo.svg"
           className="p-2"
         />
-      </button>
+      </Link>
 
       {/* Menu Button */}
       <button
@@ -35,8 +39,10 @@ export default function MenuBar({ onOpen }: MenuBarProps) {
       </button>
 
       {/* Register Button */}
-      <button className="flex items-center h-12 p-6 rounded-md bg-white hover:bg-gray-200 transition">
-        <p className="text-black font-urbanist">Register</p>
+      <button className="group flex items-center h-12 p-6 rounded-md hover:bg-[#FF0000]  bg-white transition-colors">
+        <p className="text-black group-hover:text-white font-urbanist  transition-colors">
+          Register
+        </p>
       </button>
     </div>
   );
