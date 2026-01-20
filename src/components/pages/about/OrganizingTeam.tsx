@@ -5,7 +5,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TeamCard from "./Cards/TeamCard";
 
-// Real data array for 18 cards
 const TEAM_MEMBERS = [
   { name: "Niranjan", role: "Chief Coordinator" },
   { name: "Anjana", role: "Secretary" },
@@ -47,7 +46,6 @@ export default function OrganizingTeam() {
     if (!container || !spacer || !contentWrapper || !grid) return;
 
     const ctx = gsap.context(() => {
-      // 1. Initial Styles
       gsap.set(container, { 
           yPercent: 100,
           zIndex: 40 
@@ -61,10 +59,7 @@ export default function OrganizingTeam() {
       const windowHeight = window.innerHeight;
       const contentScrollDistance = Math.max(0, gridHeight - (windowHeight - 200)); 
       
-      // PAUSE DISTANCE: How long to stay pinned before scrolling content
-      const pauseDistance = windowHeight * 0.5; // 50vh pause
-
-      // Total spacer height logic:
+      const pauseDistance = windowHeight * 0.5;
       const totalSpacerHeight = windowHeight + pauseDistance + contentScrollDistance;
       
       gsap.set(spacer, { height: totalSpacerHeight });
@@ -156,7 +151,6 @@ export default function OrganizingTeam() {
                             <TeamCard 
                                 name={member.name}
                                 role={member.role}
-                                // Automatically maps to pic1.png, pic2.png, etc.
                                 image={`/about/organizing-team/cards/pic${index + 1}.png`} 
                             />
                         </div>

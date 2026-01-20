@@ -13,7 +13,6 @@ export default function TeamCard({ image, name, role }: TeamCardProps) {
   const [hasError, setHasError] = useState(false);
   const [prevImage, setPrevImage] = useState(image);
 
-  // State derivation pattern: Reset error state when image prop changes
   if (image !== prevImage) {
     setPrevImage(image);
     setHasError(false);
@@ -21,7 +20,6 @@ export default function TeamCard({ image, name, role }: TeamCardProps) {
 
   return (
     <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden bg-gray-100 group shadow-lg">
-      {/* 1. Person Image */}
       <div className="absolute inset-0 z-0">
         {!hasError && image ? (
             <Image
@@ -41,10 +39,7 @@ export default function TeamCard({ image, name, role }: TeamCardProps) {
         )}
       </div>
 
-      {/* 2. Red Wave Overlay */}
-      {/* Increased height to 52% to ensure text has enough red background */}
       <div className="absolute bottom-0 left-0 w-full h-[52%] z-10 pointer-events-none">
-         {/* SVG Wave */}
          <div className="absolute inset-0 w-full h-full text-[#FF0000]">
             <svg 
                 className="w-full h-full" 
@@ -61,7 +56,6 @@ export default function TeamCard({ image, name, role }: TeamCardProps) {
          {/* Content inside the wave */}
          <div className="absolute bottom-0 left-0 w-full h-full flex flex-col justify-end p-3 md:p-4 pb-3 md:pb-4">
             <div className="flex justify-between items-end w-full">
-                {/* Text Container: constrained width to avoid logo overlap */}
                 <div className="flex flex-col text-white pb-1 max-w-[80%]">
                     {/* Name: Smaller on mobile, break-words to prevent overflow */}
                     <h3 className="text-base md:text-xl font-bold uppercase leading-tight md:leading-tight break-words">
