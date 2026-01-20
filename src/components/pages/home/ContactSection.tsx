@@ -99,69 +99,37 @@ export default function ContactSection() {
         },
       });
 
-      // Background appears immediately
-      if (bg) tl.to(bg, { opacity: 1, duration: 0.5, ease: "power2.out" }, 0);
+      // All elements animate simultaneously
+      if (bg) tl.to(bg, { opacity: 1, duration: 1.2, ease: "power2.out" }, 0);
+      if (logo) tl.to(logo, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
+      if (bottomImg) tl.to(bottomImg, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, 0);
+      if (address) tl.to(address, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
+      if (header) tl.to(header, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, 0);
+      if (email) tl.to(email, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, 0);
+      if (phone) tl.to(phone, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, 0);
+      if (leftNavTitle) tl.to(leftNavTitle, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
+      if (rightNavTitle) tl.to(rightNavTitle, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
 
-      // Hold background-only for 1 second worth of scroll
-      tl.to({}, { duration: 1 });
-
-      // Logo slides in from right
-      if (logo) tl.to(logo, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, "<");
-
-      // Bottom image slides up
-      if (bottomImg) tl.to(bottomImg, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, "<+=0.2");
-
-      // Address slides in from right
-      if (address) tl.to(address, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, "<+=0.2");
-
-      // Header slides down
-      if (header) tl.to(header, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, "<+=0.2");
-
-      // Social links slide down with stagger
-      socialLinksRefs.current.forEach((link, index) => {
+      // Social links animate simultaneously
+      socialLinksRefs.current.forEach((link) => {
         if (link) {
-          if (index === 0) {
-            tl.to(link, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, "<+=0.2");
-          } else {
-            tl.to(link, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, `+=${index * 0.1}`);
-          }
+          tl.to(link, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, 0);
         }
       });
 
-      // Email and phone slide up
-      if (email) tl.to(email, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, "<+=0.2");
-      if (phone) tl.to(phone, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, "<+=0.1");
-
-      // Left nav title slides in
-      if (leftNavTitle) tl.to(leftNavTitle, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, "<+=0.2");
-
-      // Left nav links slide in with stagger
-      leftNavLinksRefs.current.forEach((link, index) => {
+      // Left nav links animate simultaneously
+      leftNavLinksRefs.current.forEach((link) => {
         if (link) {
-          if (index === 0) {
-            tl.to(link, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, "<+=0.2");
-          } else {
-            tl.to(link, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, `+=${index * 0.1}`);
-          }
+          tl.to(link, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
         }
       });
 
-      // Right nav title slides in
-      if (rightNavTitle) tl.to(rightNavTitle, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, "<+=0.2");
-
-      // Right nav links slide in with stagger
-      rightNavLinksRefs.current.forEach((link, index) => {
+      // Right nav links animate simultaneously
+      rightNavLinksRefs.current.forEach((link) => {
         if (link) {
-          if (index === 0) {
-            tl.to(link, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, "<+=0.2");
-          } else {
-            tl.to(link, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, `+=${index * 0.1}`);
-          }
+          tl.to(link, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
         }
       });
-
-      // Hold for viewing
-      tl.to({}, { duration: 1.5 });
     }, section);
 
     return () => ctx.revert();
