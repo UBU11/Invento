@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="g" cx="45%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#c2410c"/>
+      <stop offset="100%" stop-color="#5a2d0c"/>
+    </radialGradient>
+  </defs>
+  <path fill="url(#g)" d="
+    M256 42
+    C230 100 195 130 155 155
+    L105 150
+    L140 225
+    C100 265 90 310 105 360
+    L185 335
+    L205 420
+    L250 390
+    L256 470
+    L262 390
+    L307 420
+    L327 335
+    L407 360
+    C422 310 412 265 372 225
+    L407 150
+    L357 155
+    C317 130 282 100 256 42
+    Z
+  "/>
+</svg>
