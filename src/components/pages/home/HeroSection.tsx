@@ -19,6 +19,7 @@ const HeroSection: React.FC = () => {
 
 
     useEffect(() => {
+    const ctx = gsap.context(() => {
         const t1 = gsap.timeline();
 
         t1.fromTo(
@@ -30,53 +31,57 @@ const HeroSection: React.FC = () => {
         gsap.fromTo(
             [leftImage.current, rightImage.current],
             { y: 500, opacity: 0.2 },
-            { y: 0, opacity: 1, duration: 2 }
+            { y: 0, opacity: 1, duration: 2, ease: "power3.out" }
         );
 
         gsap.fromTo(
             logoRef.current,
             { y: 200, rotateZ: 55, opacity: 0.3, scale: 1.5 },
-            { y: 0, rotateZ: 10, opacity: 1, scale: 1, duration: 2 }
+            { y: 0, rotateZ: 10, opacity: 1, scale: 1, duration: 2, ease: "power3.out" }
         );
 
         gsap.fromTo(
             heroRef.current,
-            { y: -100 },
-            { y: 340, duration: 2 }
+            { y: 0 },
+            { y: 330, duration: 2, ease: "power3.out" }
         );
 
-
         const scrollTl = gsap.timeline({
-            scrollTrigger: {
-            trigger: sectionRef.current, 
+        scrollTrigger: {
+            trigger: sectionRef.current,
             start: "top top",
-            end: "+=120",
-            scrub: 0.8,
-            }
+            end: "+=500",    
+            scrub: true,
+            pin: true,        
+            anticipatePin: 1,
+        },
         });
 
         scrollTl
-            .to(inventoRef.current, { scale: 1, ease: "none" })
-            .to(logoRef.current, { rotateZ: 0, ease: "none" }, 0)
-            .to(heroRef.current, { y: 800, ease: "none" }, 0);
+        .to(inventoRef.current, { scale: 1, ease: "none" })
+        .to(logoRef.current, { rotateZ: 0, ease: "none" }, 0)
+        .to(heroRef.current, { y: 800, ease: "none" }, 0);
 
         ScrollTrigger.refresh();
+    });
 
+    return () => ctx.revert();
     }, []);
+
 
 
 
     return (
         <>
             <section
-                ref={sectionRef}
+                //ref={sectionRef}
                 className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
             >
 
-                {/* Hero Image */}
+                {/* Hero Image
                 <div
                     ref={heroRef}
-                    className="absolute bottom-0 w-full h-full z-20"
+                    className="hidden absolute bottom-0 w-full h-full z-20"
                 >
                     <Image
                         src="/home/home japanees fan.png"
@@ -85,15 +90,15 @@ const HeroSection: React.FC = () => {
                         fill
                         className="object-cover"
                     />
-                </div>
+                </div> */}
         
-                {/* Left Image */}
+                {/*Desktop - Left Image */}
                 <div
                     ref={leftImage}
-                    className="absolute left-0"
+                    className="hidden md:block lg:block absolute left-0"
                 >
                     <Image
-                        src="/home/left-side.svg"
+                        src="/home/left-mobile.svg"
                         alt="Left Visual"
                         width={350}
                         height={460}
@@ -101,16 +106,57 @@ const HeroSection: React.FC = () => {
                     />
                 </div>
 
-                {/* Right Image */}
+                {/*Mobile - Left Image */}
+                <div
+                    ref={leftImage}
+                    className="lg:hidden md:hidden absolute left-0"
+                >
+                    <Image
+                        src="/home/left-side.svg"
+                        alt="Left Visual"
+                        width={190}
+                        height={300}
+                        className="object-contain opacity-80"
+                    />
+                </div>
+
+                {/*Desktop - Right Image */}
                 <div
                     ref={rightImage}
-                    className="absolute right-0"
+                    className="hidden lg:block md:block absolute right-0"
                 >
                     <Image
                         src="/home/right-side.svg"
                         alt="Left Visual"
                         width={350}
                         height={460}
+                        className="object-contain opacity-80"
+                    />
+                </div>
+
+                {/*Mobile - Right Image */}
+                <div
+                    ref={rightImage}
+                    className="block lg:hidden md:hidden absolute right-0"
+                >
+                    <Image
+                        src="/home/right-mobile.svg"
+                        alt="Left Visual"
+                        width={190}
+                        height={300}
+                        className="object-contain opacity-80"
+                    />
+                </div>
+
+                {/* Mobile - Bottom Image */}
+                <div
+                    className="block lg:hidden md:hidden absolute bottom-0"
+                >
+                    <Image
+                        src="/home/center-mobile.svg"
+                        alt="Left Visual"
+                        width={300}
+                        height={400}
                         className="object-contain opacity-80"
                     />
                 </div>
@@ -144,7 +190,6 @@ const HeroSection: React.FC = () => {
                 </div>
 
             </section>
-            <div className="h-[200vh]"></div>
         </>
     );
 }
