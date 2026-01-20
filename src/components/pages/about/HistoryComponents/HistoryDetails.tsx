@@ -35,7 +35,10 @@ export default function HistoryDetails() {
         </div>
 
         {/* Page 2 Content */}
-        <div id="history-page-2" className="w-full md:w-[55%] flex flex-col gap-6 text-black mr-auto bg-white/50 backdrop-blur-sm md:bg-transparent rounded-lg p-4 md:p-0">
+        <div id="history-page-2" className="w-full md:w-[55%] flex flex-col gap-6 text-black mr-auto
+             bg-white/50 backdrop-blur-sm md:bg-transparent
+             rounded-lg p-4 md:p-0
+             pt-12 md:pt-24">
             <p className="text-sm md:text-lg font-medium leading-relaxed md:w-[90%]">
               Then came the transformation. Technology met creativity. Innovation shared the stage with art, performance, and culture. The festival evolved into Invento—a platform where ideas, expression, and identity could coexist. A space that proved students didn’t have to choose between logic and imagination—they could lead with both.
             </p>
