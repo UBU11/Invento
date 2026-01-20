@@ -103,7 +103,7 @@ export default function History() {
              if (window.innerWidth < 768) {
                  return `${-(currentTop - 85)}px`; // Mobile: 85px from top (nav height)
              }
-             return `${-(currentTop - 30)}px`; // Desktop: 40px from top
+             return `${-(currentTop - 25)}px`; // Desktop: 40px from top
          },
          x: 0,
          scale: 1,
@@ -118,13 +118,16 @@ export default function History() {
           duration: 0.1 
       }, "-=1");
 
+      // Add synchronization label
+      tl.addLabel("contentReveal", "-=0.5");
+
       if (page1) {
           tl.to(page1, {
               opacity: 1,
               y: 0,
               duration: 1.5,
               ease: "power2.out"
-          }, "-=0.5");
+          }, "contentReveal");
       }
       
       if (mobileP1) {
@@ -133,7 +136,7 @@ export default function History() {
               y: 0,
               duration: 1.5,
               ease: "power2.out"
-          }, "-=0.5");
+          }, "contentReveal");
       }
       
       if (mobileStaticGroup) {
@@ -142,14 +145,14 @@ export default function History() {
               y: 0,
               duration: 1.5,
               ease: "power2.out"
-          }, "<");
+          }, "contentReveal");
       }
       
       if (pagoda) {
-          tl.to(pagoda, { opacity: 1, y: 0, duration: 1.5, ease: "power2.out" }, "<");
+          tl.to(pagoda, { opacity: 1, y: 0, duration: 1.5, ease: "power2.out" }, "contentReveal");
       }
       if (pattern) {
-          tl.to(pattern, { opacity: 1, y: 0, duration: 1.5, ease: "power2.out" }, "<");
+          tl.to(pattern, { opacity: 1, y: 0, duration: 1.5, ease: "power2.out" }, "contentReveal");
       }
 
       tl.to({}, { duration: 1 });
