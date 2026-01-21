@@ -4,11 +4,16 @@ import { useState, useRef, useEffect } from "react"
 import dynamic from "next/dynamic"
 import EventTable from "@/src/components/pages/events/EventTable"
 import EventScheduleHeader from "@/src/components/pages/events/EventScheduleHeader"
+import ComingSoonPage from "@/src/components/pages/coming-soon/comingSoon"
+import FallingLeaves from "@/src/components/pages/coming-soon/fallingleaves"
 
-const FallingLeaves = dynamic(
+const FallingLeavesEvents = dynamic(
   () => import("@/src/components/pages/events/fallingleaves"),
   { ssr: false }
 )
+
+// Set to false to show the actual events page when development is complete
+const SHOW_COMING_SOON = true
 
 export default function EventsPage() {
   const [activeDay, setActiveDay] = useState<1 | 2 | 3>(1)
@@ -17,12 +22,14 @@ export default function EventsPage() {
   const touchEndX = useRef<number | null>(null)
 
   useEffect(() => {
-    const handleTouchStart = (e: TouchEvent) => {
-      touchStartX.current = e.changedTouches[0].screenX
+    const handleTouchStart = (e: Event) => {
+      const touchEvent = e as TouchEvent
+      touchStartX.current = touchEvent.changedTouches[0].screenX
     }
 
-    const handleTouchEnd = (e: TouchEvent) => {
-      touchEndX.current = e.changedTouches[0].screenX
+    const handleTouchEnd = (e: Event) => {
+      const touchEvent = e as TouchEvent
+      touchEndX.current = touchEvent.changedTouches[0].screenX
       handleSwipe()
     }
 
@@ -55,6 +62,17 @@ export default function EventsPage() {
     }
   }, [activeDay])
 
+  // Show coming soon page for now
+  if (SHOW_COMING_SOON) {
+    return (
+      <>
+        <ComingSoonPage />
+        <FallingLeaves />
+      </>
+    )
+  }
+
+  // Original events page code - kept for when development is complete
   return (
     <div
       className="
@@ -67,7 +85,7 @@ export default function EventsPage() {
         backgroundImage: "url('/event/eventbg.svg')",
       }}
     >
-      <FallingLeaves />
+      <FallingLeavesEvents />
 
       {showBackdrop && (
         <div className="fixed inset-0 z-[15] bg-black/50 transition-opacity duration-300 pointer-events-auto" />

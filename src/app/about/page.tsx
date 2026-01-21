@@ -13,6 +13,9 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+// Set to true to show the organizing team section
+const SHOW_ORGANIZING_TEAM = false;
+
 export default function About() {
   useLenis((lenis) => {
     if (lenis) {
@@ -53,7 +56,7 @@ export default function About() {
         <HeroSection />
         <SecondSection />
         <History />
-        <OrganizingTeam />
+        {SHOW_ORGANIZING_TEAM && <OrganizingTeam />}
       </main>
     </ReactLenis>
   );
