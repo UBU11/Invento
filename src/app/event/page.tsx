@@ -13,7 +13,7 @@ const FallingLeavesEvents = dynamic(
 );
 
 // Set to false to show the actual events page when development is complete
-const SHOW_COMING_SOON = true
+const SHOW_COMING_SOON = false;
 
 export default function EventsPage() {
   const [activeDay, setActiveDay] = useState<1 | 2 | 3>(1);

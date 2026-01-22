@@ -1,4 +1,9 @@
-export type EventCategory =
+
+type MakeMyPassLink<Name extends string> =
+  `https://app.makemypass.com/event/${Name}`
+
+
+  export type EventCategory =
   | "WORKSHOP"
   | "TECH"
   | "GENERAL"
@@ -7,6 +12,7 @@ export type EventCategory =
 
 export interface Event {
   id: string
+  name: string
   title: string
   description: string
   category: EventCategory
@@ -17,6 +23,8 @@ export interface Event {
   prizePool?: string
   regFee?: string
   contact?: string
+  links?: Record<string, string>
+
 }
 
 

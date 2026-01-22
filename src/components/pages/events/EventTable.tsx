@@ -170,9 +170,18 @@ export default function EventTable({
                   <span className="text-white">{event.venue}</span>
                 </div>
               </div>
-              <button className="bg-red-600 px-4 md:px-7 py-1.5 md:py-2.5 text-[10px] md:text-xs font-bold uppercase hover:bg-red-700 md:flex-none whitespace-nowrap flex-shrink-0">
-                Register
-              </button>
+             
+<a
+  href={event.links?.registration ?? "#"}
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={(e) => e.stopPropagation()}
+  className="bg-red-600 px-4 md:px-7 py-1.5 md:py-2.5 text-[10px] md:text-xs font-bold uppercase hover:bg-red-700 md:flex-none whitespace-nowrap flex-shrink-0 inline-flex items-center justify-center"
+>
+  Register
+</a>
+
+
             </div>
           </div>
         ))}
