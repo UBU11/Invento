@@ -32,7 +32,9 @@ export default function TypingText({ text, speed = 100 }: TypingTextProps) {
   }, [text, speed]);
 
   return (
-    <h1 className={`${akira.className} text-white font-bold text-5xl lg:text-9xl`}>
+    <h1
+      className={`${akira.className} text-white font-bold text-5xl lg:text-9xl`}
+    >
       {displayedText}
     </h1>
   );
@@ -60,7 +62,7 @@ export const RotatingCanvasText: FC<RotatingCanvasTextProps> = ({
     ctx.font = "300 18.5px sans-serif";
     ctx.textBaseline = "bottom";
     ctx.textAlign = "center";
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle = "#000000";
 
     ctx.translate(canvas.width / 2, canvas.height / 2);
     const angleStep = (2 * Math.PI) / text.length;
@@ -98,45 +100,31 @@ export const RotatingCanvasText: FC<RotatingCanvasTextProps> = ({
   return (
     <div className="relative flex flex-col items-center justify-center mt-20">
       {duration > 0 && (
-        <h1 className={`${akira.className} text-white text-4xl font-bold`}>{percent}%</h1>
+        <h1 className={`font-akira text-black text-4xl font-bold`}>
+          {percent}%
+        </h1>
       )}
 
       <canvas ref={canvasRef} className="animate-spin-slow" />
 
-      <img src="/logo.png" alt="logo" className="absolute w-28 h-28" style={{ top: "140px" }} />
+      <img
+        src="/logo-filled.svg"
+        alt="logo"
+        className="absolute w-28 h-28"
+        style={{ top: "140px" }}
+      />
     </div>
   );
 };
 
 export const LoadingScreen: React.FC<LoadingScreenProps> = ({
   loadingDelay = 2000,
-  onComplete,
 }) => {
-  const MAX_TYPING_TIME = 800;
-  const typingDuration = Math.min(MAX_TYPING_TIME, loadingDelay);
-  const rotatingDuration = loadingDelay - typingDuration;
-
-  const [showTyping, setShowTyping] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowTyping(true);
-
-      setTimeout(() => {
-        onComplete?.();
-      }, typingDuration + 100);
-    }, rotatingDuration);
-
-    return () => clearTimeout(timer);
-  }, [rotatingDuration, typingDuration, onComplete]);
+  const rotatingDuration = loadingDelay;
 
   return (
-    <section className="flex bg-black min-h-screen justify-center items-center">
-      {showTyping ? (
-        <TypingText text="INVENTO" speed={typingDuration / 10} />
-      ) : (
-        <RotatingCanvasText duration={rotatingDuration} />
-      )}
+    <section className="flex bg-white min-h-screen justify-center items-center">
+      <RotatingCanvasText duration={rotatingDuration} />
     </section>
   );
 };

@@ -22,8 +22,8 @@ export default function RootLayout({
       >
         <LoadingProvider>
           <EventProvider>{children}</EventProvider>
+          <MenuPortal />
         </LoadingProvider>
-        <MenuPortal />
       </body>
     </html>
   );

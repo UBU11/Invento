@@ -14,6 +14,7 @@ const HeroSection: React.FC = () => {
   const inventoRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
   const leftImage = useRef<HTMLDivElement>(null);
+  const middleImage = useRef<HTMLDivElement>(null);
   const rightImage = useRef<HTMLDivElement>(null);
   const dateRef = useRef<HTMLDivElement>(null);
   const heroContentRef = useRef<HTMLDivElement>(null);
@@ -45,30 +46,83 @@ const HeroSection: React.FC = () => {
       scrollTl.scrollTrigger?.disable();
 
       scrollTl
-        .fromTo(inventoRef.current, { scale: 1.1 }, { scale: 0.75 }, 0)
-        .fromTo(logoRef.current, { rotateZ: 10 }, { rotateZ: 0 }, 0)
+        .fromTo(
+          inventoRef.current,
+          { scale: 1.1, ease: "none" },
+          { scale: 0.75, ease: "none" },
+          0,
+        )
+        .fromTo(
+          logoRef.current,
+          { rotateZ: 10, ease: "none" },
+          { rotateZ: 0, ease: "none" },
+          0,
+        )
         .fromTo(
           dateRef.current,
           { opacity: 0, y: 100 },
-          { opacity: 1, y: 0 },
+          { opacity: 1, y: 0, duration: 1 },
           0,
         )
         .fromTo(
           heroRef.current,
           { y: () => (window.innerWidth < 768 ? 150 : 345) },
-          { y: 800 },
+          { y: 800, duration: 1 },
           "<",
         )
-        .to(heroContentRef.current, {
+
+        .to(inventoRef.current, {
+          y: -600,
           opacity: 0,
-          pointerEvents: "none",
-          duration: 0.5,
+          scale: 0.2,
+          duration: 1,
+          ease: "sine.in",
         })
+        .to(
+          logoRef.current,
+          {
+            y: -400,
+            opacity: 0,
+            rotationZ: 0,
+            duration: 1,
+            ease: "sine.in",
+          },
+          "<",
+        )
+        .to(
+          dateRef.current,
+          { opacity: 0, y: 500, duration: 1, ease: "sine.in" },
+          "<",
+        )
+        .to(
+          heroRef.current,
+          { y: 1200, opacity: 0, duration: 1, ease: "sine.in" },
+          "<",
+        )
+        .to(
+          [leftImage.current, middleImage.current, rightImage.current],
+          {
+            y: 1000,
+            opacity: 0,
+            duration: 1,
+            ease: "sine.in",
+          },
+          "<",
+        )
+        .to(
+          heroContentRef.current,
+          {
+            opacity: 0,
+            pointerEvents: "none",
+            duration: 0.5,
+          },
+          ">",
+        )
         .fromTo(
           ".pro-show-wrapper",
-          { y: "-100vh", opacity: 1 },
-          { y: "0vh", opacity: 1, duration: 1.2, ease: "power2.out" },
-          "-=0.3",
+          { y: -50, opacity: 0 },
+          { y: 0, opacity: 1, duration: 5, ease: "power3.inOut" },
+          "-=0.5",
         );
 
       const t1 = gsap.timeline({
@@ -86,7 +140,7 @@ const HeroSection: React.FC = () => {
         0,
       )
         .fromTo(
-          [leftImage.current, rightImage.current],
+          [leftImage.current, middleImage.current, rightImage.current],
           { y: 500, opacity: 0.2 },
           { y: 0, opacity: 1, duration: 2 },
           "<",
@@ -137,6 +191,16 @@ const HeroSection: React.FC = () => {
             width={350}
             height={460}
             className="w-[200px] lg:w-[460px]"
+          />
+        </div>
+        {/* Middle Image */}
+        <div ref={middleImage} className="absolute -bottom-12 lg:hidden">
+          <Image
+            src="/home/middle-mobile.png"
+            alt="Middle Visual"
+            width={350}
+            height={460}
+            className="w-[750px]"
           />
         </div>
         <div ref={rightImage} className="absolute -right-12 lg:right-0">

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import KoiVideoLayer from "./fishVideoBg";
 
 type MenuBarItemProps = {
   index: number;
@@ -74,33 +75,8 @@ export default function MenuBarDialog({ onClose }: MenuBarDialogProps) {
   ];
 
   return (
-    <div className="fixed inset-0 flex w-full h-full z-25 items-center overflow-y-hidden">
-      <Image
-        fill
-        alt="Menu bar dialog background"
-        className="opacity-25 z-0"
-        src="/ui/menubar/menubar-dialog-mobile-bg.jpg"
-      />
-
-      {/* Mobile - Video Layer */}
-      <video
-        src="/ui/menubar/koi-fish-mobile.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="flex lg:hidden absolute inset-0 w-full h-full object-cover z-10"
-      />
-
-      {/* Laptop - Video Layer */}
-      <video
-        src="/ui/menubar/koi-fish-web.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="hidden lg:flex absolute inset-0 w-full h-full object-cover z-10"
-      />
+    <div className="fixed inset-0 flex w-full h-full z-25 items-center overflow-y-hidden bg-black">
+      <KoiVideoLayer />
 
       <div className="flex flex-col h-fit w-full relative z-15 items-center p-4 lg:px-12 lg:py-8 gap-12 lg:gap-6">
         {/* Top Bar */}
