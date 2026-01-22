@@ -62,7 +62,7 @@ export default function ContactSection() {
 
     const ctx = gsap.context(() => {
       // Initial states with transforms - only set if elements exist
-      if (bg) gsap.set(bg, { opacity: 1 });
+      if (bg) gsap.set(bg, { opacity: 0 });
       if (logo) gsap.set(logo, { opacity: 0, x: 300 });
       if (bottomImg) gsap.set(bottomImg, { opacity: 0, y: 200 });
       if (address) gsap.set(address, { opacity: 0, x: 300 });
@@ -97,35 +97,38 @@ export default function ContactSection() {
         },
       });
 
-      // All elements animate simultaneously
-      if (bg) tl.to(bg, { opacity: 1, duration: 1.2, ease: "power2.out" }, 0);
-      if (logo) tl.to(logo, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
-      if (bottomImg) tl.to(bottomImg, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, 0);
-      if (address) tl.to(address, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
-      if (header) tl.to(header, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, 0);
-      if (email) tl.to(email, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, 0);
-      if (phone) tl.to(phone, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, 0);
-      if (leftNavTitle) tl.to(leftNavTitle, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
-      if (rightNavTitle) tl.to(rightNavTitle, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
+      // Background appears first with slower, smoother fade
+      if (bg) tl.to(bg, { opacity: 1, duration: 2, ease: "power1.out" }, 0);
+      
+      // All other elements animate after a delay (after background has mostly faded in)
+      const elementDelay = 1.2;
+      if (logo) tl.to(logo, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, elementDelay);
+      if (bottomImg) tl.to(bottomImg, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, elementDelay);
+      if (address) tl.to(address, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, elementDelay);
+      if (header) tl.to(header, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, elementDelay);
+      if (email) tl.to(email, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, elementDelay);
+      if (phone) tl.to(phone, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, elementDelay);
+      if (leftNavTitle) tl.to(leftNavTitle, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, elementDelay);
+      if (rightNavTitle) tl.to(rightNavTitle, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, elementDelay);
 
-      // Social links animate simultaneously
+      // Social links animate after delay
       socialLinksRefs.current.forEach((link) => {
         if (link) {
-          tl.to(link, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, 0);
+          tl.to(link, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, elementDelay);
         }
       });
 
-      // Left nav links animate simultaneously
+      // Left nav links animate after delay
       leftNavLinksRefs.current.forEach((link) => {
         if (link) {
-          tl.to(link, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
+          tl.to(link, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, elementDelay);
         }
       });
 
-      // Right nav links animate simultaneously
+      // Right nav links animate after delay
       rightNavLinksRefs.current.forEach((link) => {
         if (link) {
-          tl.to(link, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
+          tl.to(link, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, elementDelay);
         }
       });
     }, section);

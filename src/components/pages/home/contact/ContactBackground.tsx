@@ -59,9 +59,9 @@ export default function ContactBackground({ sectionRef, showElements, bgRef, log
           height: "100%",
           zIndex: 0,
           pointerEvents: "none",
-          backgroundImage: "url('/contact/contact-bg.webp')",
-          backgroundSize: "cover",
-          backgroundPosition: isMobile ? "30% center" : "center",
+          backgroundImage: "url('/contact/bg.png')",
+          backgroundSize: isMobile ? "auto" : "auto",
+          backgroundPosition: isMobile ? "20% center" : "left center",
           backgroundRepeat: "no-repeat",
         }}
       />

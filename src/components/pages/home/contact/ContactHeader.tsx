@@ -29,7 +29,7 @@ export default function ContactHeader({ showElements, headerRef }: ContactHeader
         width: isMobile ? "90%" : "770px",
         height: "auto",
         left: isMobile ? "10px" : "192px",
-        top: isMobile ? "50px" : "130px",
+        top: isMobile ? "50px" : "40px",
         fontStyle: "normal",
         fontWeight: "800",
         fontSize: isMobile ? "36px" : "75px",

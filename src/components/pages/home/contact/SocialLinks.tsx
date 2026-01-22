@@ -72,7 +72,7 @@ export default function SocialLinks({ showElements, socialLinksRefs }: SocialLin
           style={{
             position: "absolute",
             left: isMobile ? link.mobileLeft : link.left,
-            top: isMobile ? "110px" : "240px",
+            top: isMobile ? "110px" : "150px",
             zIndex: 20,
             cursor: "pointer",
             textDecoration: "none",
