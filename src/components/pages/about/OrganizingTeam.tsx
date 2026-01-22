@@ -151,7 +151,7 @@ export default function OrganizingTeam() {
                             <TeamCard 
                                 name={member.name}
                                 role={member.role}
-                                image={`/about/organizing-team/cards/pic${index + 1}.png`} 
+                                image={`/about/organizing-team/cards/pic${index + 1}.webp`} 
                             />
                         </div>
                     ))}

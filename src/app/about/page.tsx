@@ -14,7 +14,7 @@ if (typeof window !== "undefined") {
 }
 
 // Set to true to show the organizing team section
-const SHOW_ORGANIZING_TEAM = false;
+const SHOW_ORGANIZING_TEAM = true;
 
 export default function About() {
   useLenis((lenis) => {
