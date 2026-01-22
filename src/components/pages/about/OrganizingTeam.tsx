@@ -139,7 +139,7 @@ export default function OrganizingTeam() {
         <div ref={contentWrapperRef} className="w-full relative flex flex-col min-h-screen">
             
             <div className="w-full pt-14 px-[5vw] flex items-center justify-between z-10 flex-shrink-0 mb-10">
-                <h1 ref={titleRef} className="text-[8vw] md:text-[5vw] font-bold font-urbanist leading-none tracking-tighter text-black uppercase">
+                <h1 ref={titleRef} className="text-[6vw] md:text-[4vw] font-bold font-akira leading-none tracking-tighter text-black uppercase">
                     Organizing Team
                 </h1>
             </div>

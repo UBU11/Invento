@@ -34,7 +34,7 @@ export default function HistoryStaticContent() {
 
         {/* Main Title */}
         <div className="history-title relative md:absolute bottom-auto md:bottom-4 left-auto md:left-[3vw] mt-4 md:mt-0 text-center md:text-left z-40 transform-gpu origin-center md:origin-left">
-          <h1 className="text-[12vw] font-bold font-urbanist leading-none tracking-tighter opacity-100 whitespace-nowrap">
+          <h1 className="text-[11vw] md:text-[9vw] font-bold font-akira leading-none tracking-tighter opacity-100 whitespace-nowrap">
             OUR HISTORY
           </h1>
         </div>

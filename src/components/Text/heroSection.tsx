@@ -17,7 +17,7 @@ export default function HeroSectionText({ text }: { text?: string }) {
     >
       <h1
         ref={textRef}
-        className="font-urbanist font-bold text-[15vw] 2xl:text-[320px] leading-none uppercase"
+        className="font-akira font-bold text-[13vw] md:text-[11vw] 2xl:text-[230px] leading-none uppercase"
       >
         {text}
       </h1>
