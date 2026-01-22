@@ -61,43 +61,49 @@ export default function ContactBackground({ sectionRef, showElements, bgRef, log
           pointerEvents: "none",
           backgroundImage: "url('/contact/contact-bg.webp')",
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: isMobile ? "30% center" : "center",
           backgroundRepeat: "no-repeat",
         }}
       />
       
-      {/* Left Side Image */}
-      <img
-        src="/contact/contact-side.webp"
-        alt=""
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          zIndex: 5,
-          pointerEvents: "none",
-          height: "100%",
-          width: "auto",
-        }}
-      />
-      
-      {/* Bottom Image */}
-      <img
-        ref={bottomImageRef}
-        src="/contact/contact-bottom.webp"
-        alt=""
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          zIndex: 5,
-          pointerEvents: "none",
-          width: "100%",
-          height: "auto",
-          maxHeight: "clamp(300px, 50vh, 600px)",
-        }}
-      />
+      {/* Bottom Image - Mobile */}
+      {isMobile && (
+        <img
+          ref={bottomImageRef}
+          src="/contact/sam.webp"
+          alt=""
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            zIndex: 5,
+            pointerEvents: "none",
+            width: "100%",
+            height: "auto",
+          }}
+        />
+      )}
+
+      {/* Bottom Image - Desktop */}
+      {!isMobile && (
+        <img
+          ref={bottomImageRef}
+          src="/contact/sam-wide.webp"
+          alt=""
+          style={{
+            position: "absolute",
+            bottom: -100,
+            left: 0,
+            right: 0,
+            zIndex: 5,
+            pointerEvents: "none",
+            width: "100%",
+            height: "auto",
+            maxHeight: "clamp(800px, 50vh, 600px)",
+          }}
+        />
+      )}
     </>
   );
 }
