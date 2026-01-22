@@ -30,59 +30,103 @@ export default function HeroSection() {
       return;
 
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "+=1200%",
-          pin: true,
-          scrub: 2,
-          invalidateOnRefresh: true,
-        },
-      });
-
-      tl.to(
-        navbarRef.current,
+      const mm = gsap.matchMedia();
+      mm.add(
         {
-          opacity: 0,
-          duration: 0.3,
-          ease: "expo.out",
+          // adjust breakpoint as you like
+          isMobile: "(max-width: 767px)",
+          isDesktop: "(min-width: 768px)",
         },
-        0,
-      )
-        .to(
-          textRef.current,
-          {
-            y: "-60vh",
-            duration: 0.7,
-            ease: "power1.inOut",
-          },
-          0,
-        )
-        .to(
-          storyRef.current?.querySelectorAll("p") || [],
-          {
-            opacity: 1,
-            y: 0,
-            stagger: 0.3,
-            duration: 0.5,
-            ease: "power2.out",
-          },
-          0.6,
-        )
-        .to(
-          cardsRef.current?.querySelectorAll(".card") || [],
-          {
-            opacity: 1,
-            y: 0,
-            stagger: 0,
-            duration: 0.6,
-            ease: "power2.out",
-          },
-          0.5,
-        )
-        .to({}, { duration: 2 });
-    }, sectionRef);
+        (context) => {
+          const { isMobile } = context.conditions as { isMobile: boolean };
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top top",
+              end: "+=1200%",
+              pin: true,
+              scrub: 2,
+              invalidateOnRefresh: true,
+            },
+          });
+
+          tl.to(
+            navbarRef.current,
+            {
+              opacity: 0,
+              duration: 0.3,
+              ease: "expo.out",
+            },
+            0,
+          )
+            .to(
+              textRef.current,
+              {
+                y: "-60vh",
+                duration: 0.7,
+                ease: "power1.inOut",
+              },
+              0,
+            )
+            .to(
+              storyRef.current?.querySelectorAll("p") || [],
+              {
+                opacity: 1,
+                y: 0,
+                stagger: 0.3,
+                duration: 0.5,
+                ease: "power2.out",
+              },
+              0.6,
+            )
+            .to(
+              cardsRef.current?.querySelectorAll(".card") || [],
+              {
+                opacity: 1,
+                y: 0,
+                stagger: 0,
+                duration: 0.6,
+                ease: "power2.out",
+              },
+              0.5,
+            );
+          if (isMobile) {
+            tl.to(
+              cardsRef.current?.querySelectorAll(".card") || [],
+              {
+                opacity: 1,
+                y: "-80vh",
+                stagger: 0,
+                duration: 1,
+                ease: "power2.inOut",
+              },
+              1,
+            )
+              .to(
+                storyRef.current?.querySelectorAll("p") || [],
+                {
+                  opacity: 0,
+                  stagger: 0.1,
+                  duration: 0.6,
+                  ease: "power2.inOut",
+                },
+                "<",
+              )
+              .to(
+                textRef.current,
+                {
+                  opacity: 0,
+                  duration: 0.8,
+                  ease: "power1.inOut",
+                },
+                "<",
+              );
+          }
+          tl.to({}, { duration: 3 });
+        },
+        sectionRef,
+      );
+    });
 
     return () => ctx.revert();
   }, []);
