@@ -18,4 +18,5 @@ export interface Event {
   prizePool?: string
   regFee?: string
   contact?: string
+  registration?:string
 }
