@@ -47,7 +47,7 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({
               img.addEventListener("load", () => resolve(), { once: true });
               img.addEventListener("error", () => resolve(), { once: true });
             }
-          })
+          }),
       );
 
       Promise.all(imagePromises).then(() => {
@@ -70,7 +70,10 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({
   return (
     <>
       {isLoading && (
-        <LoadingScreen loadingDelay={loadingDelay} onComplete={() => setIsLoading(false)} />
+        <LoadingScreen
+          loadingDelay={loadingDelay}
+          onComplete={() => setIsLoading(false)}
+        />
       )}
       {!isLoading && children}
     </>
