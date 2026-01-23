@@ -80,13 +80,33 @@ export default function FAQSection() {
       // Time-based animation for elements (not scroll-based)
       const animateElements = () => {
         if (elementTl && elementTl.isActive()) return;
-        
+
         elementTl = gsap.timeline({ delay: 0.5 });
-        
-        if (topLeft) elementTl.to(topLeft, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
-        if (bottomRight) elementTl.to(bottomRight, { opacity: 1, x: 0, y: 0, duration: 1.2, ease: "power2.out" }, 0);
-        if (title) elementTl.to(title, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, 0);
-        if (table) elementTl.to(table, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, 0);
+
+        if (topLeft)
+          elementTl.to(
+            topLeft,
+            { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" },
+            0,
+          );
+        if (bottomRight)
+          elementTl.to(
+            bottomRight,
+            { opacity: 1, x: 0, y: 0, duration: 1.2, ease: "power2.out" },
+            0,
+          );
+        if (title)
+          elementTl.to(
+            title,
+            { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" },
+            0,
+          );
+        if (table)
+          elementTl.to(
+            table,
+            { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" },
+            0,
+          );
       };
 
       // Reverse elements animation
@@ -105,14 +125,14 @@ export default function FAQSection() {
           setIsVisible(true);
           // Immediately slide section up completely
           if (section) {
-            gsap.to(section, { 
-              y: 0, 
-              duration: 1, 
+            gsap.to(section, {
+              y: 0,
+              duration: 1,
               ease: "power2.out",
               onComplete: () => {
                 // Trigger element animations after slide completes
                 animateElements();
-              }
+              },
             });
           }
         },
@@ -123,6 +143,11 @@ export default function FAQSection() {
             gsap.to(section, { y: "100%", duration: 1, ease: "power2.out" });
           }
           reverseElements();
+
+          if (typeof window !== "undefined" && window.heroScrollTrigger) {
+            window.heroScrollTrigger.enable();
+            // ScrollTrigger.refresh();
+          }
         },
       });
     }, section);
@@ -131,11 +156,21 @@ export default function FAQSection() {
   }, []);
 
   return (
-    <>
-      <div ref={firstSpacerRef} className="relative w-full h-[1px] pointer-events-none" />
-      <div ref={spacerRef} className="relative w-full h-[200vh] pointer-events-none" />
+    <div>
+      <div
+        ref={firstSpacerRef}
+        className="relative w-full h-[1px] pointer-events-none"
+      />
+      <div
+        id="faq"
+        ref={spacerRef}
+        className="relative w-full h-[200vh] pointer-events-none"
+      />
 
-      <section ref={sectionRef} className="fixed top-0 left-0 h-screen w-screen overflow-hidden z-20">
+      <section
+        ref={sectionRef}
+        className="fixed top-0 left-0 h-screen w-screen overflow-hidden z-20"
+      >
         <div ref={containerRef} className="absolute w-full h-full">
           <div
             ref={bgRef}
@@ -159,7 +194,11 @@ export default function FAQSection() {
           {/* Top Left Decoration */}
           <img
             ref={topLeftRef}
-            src={typeof window !== "undefined" && window.innerWidth < 1024 ? "/faq/top-left-mob.webp" : "/faq/top-left.webp"}
+            src={
+              typeof window !== "undefined" && window.innerWidth < 1024
+                ? "/faq/top-left-mob.webp"
+                : "/faq/top-left.webp"
+            }
             alt=""
             style={{
               position: "absolute",
@@ -167,7 +206,10 @@ export default function FAQSection() {
               left: "0",
               zIndex: 5,
               pointerEvents: "none",
-              width: typeof window !== "undefined" && window.innerWidth < 1024 ? "180px" : "280px",
+              width:
+                typeof window !== "undefined" && window.innerWidth < 1024
+                  ? "180px"
+                  : "280px",
               height: "auto",
               aspectRatio: "426/480",
             }}
@@ -185,7 +227,10 @@ export default function FAQSection() {
               zIndex: 5,
               pointerEvents: "none",
               width: "100%",
-              maxWidth: typeof window !== "undefined" && window.innerWidth < 1024 ? "250px" : "426px",
+              maxWidth:
+                typeof window !== "undefined" && window.innerWidth < 1024
+                  ? "250px"
+                  : "426px",
               height: "auto",
               aspectRatio: "426/343",
             }}
@@ -193,16 +238,25 @@ export default function FAQSection() {
 
           <h1
             ref={titleRef}
-            className={akira.className}
+            className="font-akira"
             style={{
               position: "absolute",
               width: "291px",
               height: "160px",
-              left: typeof window !== "undefined" && window.innerWidth < 1024 ? "20px" : "160px",
-              top: typeof window !== "undefined" && window.innerWidth < 1024 ? "140px" : "80px",
+              left:
+                typeof window !== "undefined" && window.innerWidth < 1024
+                  ? "20px"
+                  : "160px",
+              top:
+                typeof window !== "undefined" && window.innerWidth < 1024
+                  ? "140px"
+                  : "80px",
               fontStyle: "normal",
               fontWeight: "800",
-              fontSize: typeof window !== "undefined" && window.innerWidth < 1024 ? "50px" : "87.94px",
+              fontSize:
+                typeof window !== "undefined" && window.innerWidth < 1024
+                  ? "50px"
+                  : "87.94px",
               lineHeight: "160px",
               display: "flex",
               alignItems: "center",
@@ -216,7 +270,7 @@ export default function FAQSection() {
             FAQ<span style={{ fontSize: "0.6em" }}>s</span>
           </h1>
 
-          <div 
+          <div
             ref={tableRef}
             className="relative z-10 px-4 h-full pt-8 md:-mt-16 pb-32"
           >
@@ -224,7 +278,6 @@ export default function FAQSection() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
-

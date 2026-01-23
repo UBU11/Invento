@@ -17,6 +17,7 @@ const MenuBarItem = ({
 }: MenuBarItemProps) => {
   return (
     <Link
+      scroll={false}
       className="flex group w-full items-center gap-4 justify-between border-b lg:border-b-0 lg:border-t border-white pb-4 lg:pb-0 lg:pt-4"
       onClick={onClick}
       href={endpoint}
@@ -66,11 +67,11 @@ export default function MenuBarDialog({ onClose }: MenuBarDialogProps) {
     },
     {
       displayName: "Contact",
-      endpoint: "/",
+      endpoint: "/#contact",
     },
     {
       displayName: "FAQs",
-      endpoint: "/",
+      endpoint: "/#faq",
     },
   ];
 

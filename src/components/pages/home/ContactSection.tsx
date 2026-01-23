@@ -19,9 +19,18 @@ const leftNavLinks = [
 
 const rightNavLinks = [
   { text: "Register", href: "https://app.makemypass.com/event/day-pass" },
-  { text: "Saptha", href: "https://www.instagram.com/sapthagecpalakkad?igsh=d3J6cHE1b3Y5ZDVj" },
-  { text: "Taksathi", href: "https://www.instagram.com/gecfashionclub?igsh=cjg0MHB3Mjd4cHly" },
-  { text: "Natya", href: "https://www.instagram.com/_nh_13_?igsh=NmJmOHdkNmwxcGNz" },
+  {
+    text: "Saptha",
+    href: "https://www.instagram.com/sapthagecpalakkad?igsh=d3J6cHE1b3Y5ZDVj",
+  },
+  {
+    text: "Taksathi",
+    href: "https://www.instagram.com/gecfashionclub?igsh=cjg0MHB3Mjd4cHly",
+  },
+  {
+    text: "Natya",
+    href: "https://www.instagram.com/_nh_13_?igsh=NmJmOHdkNmwxcGNz",
+  },
 ];
 
 export default function ContactSection() {
@@ -36,13 +45,19 @@ export default function ContactSection() {
   const bottomImageRef = useRef<HTMLImageElement>(null);
   const addressRef = useRef<HTMLParagraphElement>(null);
   const headerRef = useRef<HTMLHeadingElement>(null);
-  const socialLinksRefs = useRef<(HTMLAnchorElement | null)[]>(new Array(4).fill(null));
+  const socialLinksRefs = useRef<(HTMLAnchorElement | null)[]>(
+    new Array(4).fill(null),
+  );
   const emailRef = useRef<HTMLParagraphElement>(null);
   const phoneRef = useRef<HTMLParagraphElement>(null);
   const leftNavTitleRef = useRef<HTMLParagraphElement>(null);
-  const leftNavLinksRefs = useRef<(HTMLAnchorElement | null)[]>(new Array(4).fill(null));
+  const leftNavLinksRefs = useRef<(HTMLAnchorElement | null)[]>(
+    new Array(4).fill(null),
+  );
   const rightNavTitleRef = useRef<HTMLParagraphElement>(null);
-  const rightNavLinksRefs = useRef<(HTMLAnchorElement | null)[]>(new Array(4).fill(null));
+  const rightNavLinksRefs = useRef<(HTMLAnchorElement | null)[]>(
+    new Array(4).fill(null),
+  );
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -74,12 +89,12 @@ export default function ContactSection() {
       if (phone) gsap.set(phone, { opacity: 0, y: 50 });
       if (leftNavTitle) gsap.set(leftNavTitle, { opacity: 0, x: 300 });
       if (rightNavTitle) gsap.set(rightNavTitle, { opacity: 0, x: 300 });
-      
+
       // Set initial states for social links
       socialLinksRefs.current.forEach((link) => {
         if (link) gsap.set(link, { opacity: 0, y: -150 });
       });
-      
+
       // Set initial states for navigation links
       leftNavLinksRefs.current.forEach((link) => {
         if (link) gsap.set(link, { opacity: 0, x: 300 });
@@ -123,39 +138,91 @@ export default function ContactSection() {
           elementTl.kill();
           elementTl = null;
         }
-        
+
         // Reset elements to initial state first
         resetElements();
-        
+
         elementTl = gsap.timeline({ delay: 0.5 });
-        
-        if (logo) elementTl.to(logo, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
-        if (bottomImg) elementTl.to(bottomImg, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, 0);
-        if (address) elementTl.to(address, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
-        if (header) elementTl.to(header, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, 0);
-        if (email) elementTl.to(email, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, 0);
-        if (phone) elementTl.to(phone, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, 0);
-        if (leftNavTitle) elementTl.to(leftNavTitle, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
-        if (rightNavTitle) elementTl.to(rightNavTitle, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
+
+        if (logo)
+          elementTl.to(
+            logo,
+            { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" },
+            0,
+          );
+        if (bottomImg)
+          elementTl.to(
+            bottomImg,
+            { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" },
+            0,
+          );
+        if (address)
+          elementTl.to(
+            address,
+            { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" },
+            0,
+          );
+        if (header)
+          elementTl.to(
+            header,
+            { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" },
+            0,
+          );
+        if (email)
+          elementTl.to(
+            email,
+            { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" },
+            0,
+          );
+        if (phone)
+          elementTl.to(
+            phone,
+            { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" },
+            0,
+          );
+        if (leftNavTitle)
+          elementTl.to(
+            leftNavTitle,
+            { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" },
+            0,
+          );
+        if (rightNavTitle)
+          elementTl.to(
+            rightNavTitle,
+            { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" },
+            0,
+          );
 
         // Social links animate
         socialLinksRefs.current.forEach((link) => {
           if (link) {
-            elementTl!.to(link, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, 0);
+            elementTl!.to(
+              link,
+              { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
+              0,
+            );
           }
         });
 
         // Left nav links animate
         leftNavLinksRefs.current.forEach((link) => {
           if (link) {
-            elementTl!.to(link, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
+            elementTl!.to(
+              link,
+              { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" },
+              0,
+            );
           }
         });
 
         // Right nav links animate
         rightNavLinksRefs.current.forEach((link) => {
           if (link) {
-            elementTl!.to(link, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
+            elementTl!.to(
+              link,
+              { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" },
+              0,
+            );
           }
         });
       };
@@ -171,21 +238,23 @@ export default function ContactSection() {
       // Section slides up immediately when FAQ section ends
       ScrollTrigger.create({
         trigger: spacer,
-        start: "top top",
+        start: "top bottom",
         onEnter: () => {
           setIsVisible(true);
           isEntering = true;
           // Immediately slide section up completely
           if (section) {
-            gsap.to(section, { 
-              y: 0, 
-              duration: 1, 
+            gsap.to(section, {
+              y: 0,
+              duration: 1,
               ease: "power2.out",
               onComplete: () => {
                 // Trigger element animations after slide completes
                 animateElements();
-                setTimeout(() => { isEntering = false; }, 2500);
-              }
+                setTimeout(() => {
+                  isEntering = false;
+                }, 2500);
+              },
             });
           }
           // Immediately reset and clear any existing timeline
@@ -200,15 +269,17 @@ export default function ContactSection() {
           isEntering = true;
           // Immediately slide section up completely
           if (section) {
-            gsap.to(section, { 
-              y: 0, 
-              duration: 1, 
+            gsap.to(section, {
+              y: 0,
+              duration: 1,
               ease: "power2.out",
               onComplete: () => {
                 // Trigger element animations after slide completes
                 animateElements();
-                setTimeout(() => { isEntering = false; }, 2500);
-              }
+                setTimeout(() => {
+                  isEntering = false;
+                }, 2500);
+              },
             });
           }
           // Immediately reset and clear any existing timeline
@@ -226,6 +297,10 @@ export default function ContactSection() {
             gsap.to(section, { y: "100%", duration: 1, ease: "power2.out" });
           }
           reverseElements();
+
+          if (typeof window !== "undefined" && window.heroScrollTrigger) {
+            window.heroScrollTrigger.enable();
+          }
         },
       });
     }, section);
@@ -235,33 +310,31 @@ export default function ContactSection() {
 
   return (
     <>
-      <div ref={spacerRef} className="relative w-full h-[200vh] pointer-events-none" />
+      <div
+        id="contact"
+        ref={spacerRef}
+        className="relative w-full h-[200vh] pointer-events-none"
+      />
 
       <section
         ref={sectionRef}
         className="fixed top-0 left-0 h-screen w-screen overflow-hidden z-40"
       >
         <div ref={containerRef} className="absolute w-full h-full">
-          <ContactBackground 
-            sectionRef={sectionRef} 
+          <ContactBackground
+            sectionRef={sectionRef}
             showElements={isVisible}
             bgRef={bgRef}
             logoRef={logoRef}
             bottomImageRef={bottomImageRef}
           />
-          <ContactAddress 
-            showElements={isVisible}
-            addressRef={addressRef}
-          />
-          <ContactHeader 
-            showElements={isVisible}
-            headerRef={headerRef}
-          />
-          <SocialLinks 
+          <ContactAddress showElements={isVisible} addressRef={addressRef} />
+          <ContactHeader showElements={isVisible} headerRef={headerRef} />
+          <SocialLinks
             showElements={isVisible}
             socialLinksRefs={socialLinksRefs}
           />
-          <ContactInfo 
+          <ContactInfo
             showElements={isVisible}
             emailRef={emailRef}
             phoneRef={phoneRef}
@@ -293,4 +366,3 @@ export default function ContactSection() {
     </>
   );
 }
-

@@ -20,6 +20,16 @@ const HeroSection: React.FC = () => {
   const heroContentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const cameFromHash =
+      typeof window !== "undefined" &&
+      (window.location.hash === "#faq" || window.location.hash === "#contact");
+
+    let pendingHashScroll = false;
+
+    if (cameFromHash) {
+      pendingHashScroll = true;
+    }
+
     const lockScroll = () => {
       document.body.style.overflow = "hidden";
       document.documentElement.style.overflow = "hidden";
@@ -128,10 +138,36 @@ const HeroSection: React.FC = () => {
       const t1 = gsap.timeline({
         onComplete: () => {
           unlockScroll();
-          scrollTl.scrollTrigger?.enable();
-          ScrollTrigger.refresh();
+
+          if (!cameFromHash) {
+            scrollTl.scrollTrigger?.enable();
+            ScrollTrigger.refresh();
+          }
         },
       });
+
+      if (pendingHashScroll) {
+        window.heroScrollTrigger = scrollTl.scrollTrigger;
+        const el = document.querySelector(window.location.hash);
+        if (el) {
+          const extraScroll = 150;
+          const y =
+            el.getBoundingClientRect().top + window.scrollY + extraScroll;
+
+          // Disable hero scroll trigger BEFORE jumping
+          t1.scrollTrigger?.disable();
+
+          gsap.to(window, {
+            scrollTo: y,
+            duration: 0.6,
+            ease: "power2.out",
+            onComplete: () => {
+              ScrollTrigger.refresh();
+              t1.scrollTrigger?.enable();
+            },
+          });
+        }
+      }
 
       t1.fromTo(
         inventoRef.current,
