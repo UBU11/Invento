@@ -127,7 +127,7 @@ export default function ContactSection() {
         // Reset elements to initial state first
         resetElements();
         
-        elementTl = gsap.timeline({ delay: 1 });
+        elementTl = gsap.timeline({ delay: 0.5 });
         
         if (logo) elementTl.to(logo, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
         if (bottomImg) elementTl.to(bottomImg, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, 0);
