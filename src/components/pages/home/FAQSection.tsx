@@ -81,7 +81,7 @@ export default function FAQSection() {
       const animateElements = () => {
         if (elementTl && elementTl.isActive()) return;
         
-        elementTl = gsap.timeline({ delay: 1 });
+        elementTl = gsap.timeline({ delay: 0.5 });
         
         if (topLeft) elementTl.to(topLeft, { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 0);
         if (bottomRight) elementTl.to(bottomRight, { opacity: 1, x: 0, y: 0, duration: 1.2, ease: "power2.out" }, 0);
