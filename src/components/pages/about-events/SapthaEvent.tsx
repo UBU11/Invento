@@ -16,13 +16,22 @@ const SapthaEvent = () => {
 
   useGSAP(
     () => {
-      // Entry Animation: Fade in from bottom
-      gsap.from([ladyRef.current, titleRef.current], {
+      // Entry Animation: Lady Image (Scale up + Fade up)
+      gsap.from(ladyRef.current, {
+        y: 100,
+        scale: 0.5,
+        autoAlpha: 0,
+        duration: 1.2,
+        ease: "power3.out",
+      });
+
+      // Entry Animation: Title (Fade up)
+      gsap.from(titleRef.current, {
         y: 100,
         autoAlpha: 0,
         duration: 1,
         ease: "power2.out",
-        stagger: 0.2,
+        delay: 0.3, // Slight delay after lady starts
       });
 
       const tl = gsap.timeline({
