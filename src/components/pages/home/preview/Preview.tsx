@@ -27,9 +27,10 @@ const Preview = () => {
         const leftBtn = section.querySelector(".left-btn");
 
         if (rightImg) {
+          
           gsap.fromTo(
             [rightImg, rightBtn],
-            { xPercent: 100, autoAlpha: 0 },
+            { xPercent: 100, autoAlpha: 1},
             {
               xPercent: 0,
               autoAlpha: 1,
