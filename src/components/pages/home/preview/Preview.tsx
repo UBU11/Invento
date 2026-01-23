@@ -80,7 +80,7 @@ const Preview = () => {
     <div ref={mainRef} className="w-full overflow-hidden">
       <div className="hidden lg:block md:block">
         <section className="min-h-screen relative desktop-section">
-          <Link href="/coming-soon">
+          <Link scroll={false} href="/coming-soon">
             <Image
               src={sapthaWeb}
               width={1200}
@@ -92,6 +92,7 @@ const Preview = () => {
 
           <div className="absolute flex -bottom-18 w-full px-24 justify-end z-30">
             <Link
+              scroll={false}
               href="/coming-soon"
               className="bg-[#A41F22] p-3 font-akira text-white right-btn"
             >
@@ -103,6 +104,7 @@ const Preview = () => {
         <section className="min-h-screen relative desktop-section">
           <div className="absolute flex -bottom-18 w-full px-42 justify-end">
             <Link
+              scroll={false}
               href="/coming-soon"
               className="bg-[#A41F22] p-3 font-akira text-white left-btn"
             >
@@ -110,7 +112,7 @@ const Preview = () => {
             </Link>
           </div>
 
-          <Link href="/coming-soon">
+          <Link scroll={false} href="/coming-soon">
             <Image
               src={technicalWeb}
               width={1200}
@@ -122,7 +124,7 @@ const Preview = () => {
         </section>
 
         <section className="min-h-screen relative desktop-section">
-          <Link href="/coming-soon">
+          <Link scroll={false} href="/coming-soon">
             <Image
               src={generalWeb}
               width={1200}
@@ -134,6 +136,7 @@ const Preview = () => {
 
           <div className="absolute flex -bottom-18 w-full px-42 justify-end">
             <Link
+              scroll={false}
               href="/coming-soon"
               className="bg-[#A41F22] p-3 font-akira text-white left-btn"
             >

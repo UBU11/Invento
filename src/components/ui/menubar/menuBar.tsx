@@ -11,6 +11,7 @@ export default function MenuBar({ onOpen }: MenuBarProps) {
     <div className="flex w-fit gap-2 bg-(--invento-gray) p-1.5 rounded-xl items-center z-200">
       {/* Invento Logo Button */}
       <Link
+        scroll={false}
         href="/"
         className="relative h-12 w-12 bg-white rounded-md flex items-center justify-center hover:opacity-80 transition"
       >
@@ -40,13 +41,13 @@ export default function MenuBar({ onOpen }: MenuBarProps) {
 
       {/* Register Button */}
 
-      <Link href="/events">
-  <button className="group flex items-center h-12 p-6 rounded-md hover:bg-[#FF0000] bg-white transition-colors">
-    <p className="text-black group-hover:text-white font-urbanist transition-colors">
-      Register
-    </p>
-  </button>
-</Link>
+      <Link scroll={false} href="/events">
+        <button className="group flex items-center h-12 p-6 rounded-md hover:bg-[#FF0000] bg-white transition-colors">
+          <p className="text-black group-hover:text-white font-urbanist transition-colors">
+            Register
+          </p>
+        </button>
+      </Link>
     </div>
   );
 }

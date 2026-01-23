@@ -26,6 +26,7 @@ const HaricharanCard: React.FC = () => (
         South India’s biggest cinematic hits.
       </p>
       <Link
+        scroll={false}
         href={"/event"}
         className="absolute bottom-3 md:bottom-15 bg-[#A41F22] text-white text-[5px] lg:text-xl font-bold uppercase px-1 py-1 lg:px-8 lg:py-3"
       >
