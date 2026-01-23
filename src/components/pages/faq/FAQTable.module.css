@@ -8,10 +8,11 @@
   position: relative;
   width: 80%;
   height: 250px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   margin: 250px auto 0;
-  scrollbar-gutter: stable;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
 }
 
 .faqItem {
@@ -89,20 +90,7 @@
   }
 
   .container::-webkit-scrollbar {
-    width: 12px;
-  }
-
-  .container::-webkit-scrollbar-track {
-    background: #FF0000;
-  }
-
-  .container::-webkit-scrollbar-thumb {
-    background: #000;
-    border-radius: 6px;
-  }
-
-  .container::-webkit-scrollbar-thumb:hover {
-    background: #333;
+    display: none; /* Chrome, Safari, Opera */
   }
 
   .questionText {
