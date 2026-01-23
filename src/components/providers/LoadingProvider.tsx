@@ -1,76 +1,92 @@
 "use client";
 
-import { ReactNode, useState, useEffect } from "react";
-import { LoadingScreen } from "../loading/LoadingScreen";
+import { createContext, useContext, useEffect, useState } from "react";
+import { LoadingScreen } from "@/src/components/loading/LoadingScreen";
 
-interface LoadingProviderProps {
-  children: ReactNode;
-  loadingDelay?: number;
+// Hook
+export function usePreload(assets: string[]) {
+  const [progress, setProgress] = useState(0);
+  const [done, setDone] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    let progressInterval: NodeJS.Timeout;
+    let imagesLoaded = false;
+
+    // Reset state
+    setProgress(0);
+    setDone(false);
+
+    // Start animation after a brief moment to ensure state is reset
+    const startTimeout = setTimeout(() => {
+      progressInterval = setInterval(() => {
+        setProgress((prev) => {
+          if (!imagesLoaded && prev < 90) {
+            return Math.min(prev + 0.6, 90);
+          }
+
+          if (imagesLoaded && prev < 100) {
+            return Math.min(prev + 1.2, 100);
+          }
+
+          if (prev >= 100) {
+            clearInterval(progressInterval);
+            setTimeout(() => {
+              if (!cancelled) setDone(true);
+            }, 600);
+          }
+
+          return prev;
+        });
+      }, 100);
+    }, 100);
+
+    // Preload assets
+    Promise.all(
+      assets.map(
+        (src) =>
+          new Promise<void>((resolve) => {
+            const img = new Image();
+            img.src = src;
+            img.onload = () => resolve();
+            img.onerror = () => resolve();
+          })
+      )
+    ).then(() => {
+      if (!cancelled) imagesLoaded = true;
+    });
+
+    return () => {
+      cancelled = true;
+      clearTimeout(startTimeout);
+      if (progressInterval) clearInterval(progressInterval);
+    };
+  }, [assets]);
+
+  return {
+    progress: Math.round(progress),
+    done,
+  };
 }
 
-export const LoadingProvider: React.FC<LoadingProviderProps> = ({
-  children,
-  loadingDelay = 2000,
-}) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [minTimeElapsed, setMinTimeElapsed] = useState(false);
+// Context (optional, if you need global loading state)
+const LoadingContext = createContext<{
+  isLoading: boolean;
+  setIsLoading: (loading: boolean) => void;
+}>({
+  isLoading: false,
+  setIsLoading: () => {},
+});
 
-  // Minimum loading time
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setMinTimeElapsed(true);
-    }, loadingDelay);
+export const useLoading = () => useContext(LoadingContext);
 
-    return () => clearTimeout(timer);
-  }, [loadingDelay]);
-
-  // Wait for all images to load
-  useEffect(() => {
-    const checkImages = () => {
-      const images = document.querySelectorAll("img");
-      const totalImages = images.length;
-
-      if (totalImages === 0) {
-        // No images found, check again after a delay in case content is still loading
-        setTimeout(checkImages, 500);
-        return;
-      }
-
-      const imagePromises = Array.from(images).map(
-        (img) =>
-          new Promise<void>((resolve) => {
-            if (img.complete) {
-              resolve();
-            } else {
-              img.addEventListener("load", () => resolve(), { once: true });
-              img.addEventListener("error", () => resolve(), { once: true });
-            }
-          }),
-      );
-
-      Promise.all(imagePromises).then(() => {
-        setImagesLoaded(true);
-      });
-    };
-
-    // Wait a bit for DOM to be ready and content to render
-    const timeoutId = setTimeout(checkImages, 100);
-    return () => clearTimeout(timeoutId);
-  }, []);
-
-  // Hide loading screen when both conditions are met
-  useEffect(() => {
-    if (imagesLoaded && minTimeElapsed) {
-      const timer = setTimeout(() => setIsLoading(false), 0);
-      return () => clearTimeout(timer);
-    }
-  }, [imagesLoaded, minTimeElapsed]);
+// Provider Component
+export function LoadingProvider({ children }: { children: React.ReactNode }) {
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <>
-      {isLoading && <LoadingScreen progress={100} />}
-      {!isLoading && children}
-    </>
+    <LoadingContext.Provider value={{ isLoading, setIsLoading }}>
+      {children}
+    </LoadingContext.Provider>
   );
-};
+}

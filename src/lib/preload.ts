@@ -14,3 +14,17 @@ export const PREVIEW_ASSETS = [
     "/home/preview/general.webp",               
 ];
 
+export const ABOUT_ASSETS = [
+  "/about/about-hero.png",
+  "/about/about-hero-mobile.png",
+  "/about/about-mission-vision-mobile.png",
+  "/logo-filled.svg",
+];
+
+export const EVENTS_ASSETS = [
+  "/event/eventbg.webp",
+  "/event/arrowl.svg",
+  "/event/arrowr.svg",
+  "/logo-filled.svg",
+];
+

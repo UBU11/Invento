@@ -6,6 +6,9 @@ import EventTable from "@/src/components/pages/events/EventTable";
 import EventScheduleHeader from "@/src/components/pages/events/EventScheduleHeader";
 import ComingSoonPage from "@/src/components/pages/coming-soon/comingSoon";
 import FallingLeaves from "@/src/components/pages/coming-soon/fallingleaves";
+import { EVENTS_ASSETS } from "@/src/lib/preload";
+import { usePreload } from "@/src/hooks/usePreload";
+import { LoadingScreen } from "@/src/components/loading/LoadingScreen";
 
 const FallingLeavesEvents = dynamic(
   () => import("@/src/components/pages/events/fallingleaves"),
@@ -17,6 +20,7 @@ export default function EventsPage() {
   const [showBackdrop, setShowBackdrop] = useState(false);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
+  const { progress, done } = usePreload(EVENTS_ASSETS);
 
   useEffect(() => {
     const handleTouchStart = (e: Event) => {
@@ -63,17 +67,21 @@ export default function EventsPage() {
 
   // Original events page code - kept for when development is complete
   return (
-    <div
-      className="
-        min-h-screen w-screen relative text-white
-        bg-cover bg-right md:bg-center
-        bg-no-repeat bg-fixed md:bg-scroll
-        overflow-x-hidden event-swipe-container
-      "
-      style={{
-        backgroundImage: "url('/event/eventbg.webp')",
-      }}
-    >
+    <>
+      {!done && <LoadingScreen progress={progress} />}
+      
+      {done && (
+      <div
+        className="
+          min-h-screen w-screen relative text-white
+          bg-cover bg-right md:bg-center
+          bg-no-repeat bg-fixed md:bg-scroll
+          overflow-x-hidden event-swipe-container
+        "
+        style={{
+          backgroundImage: "url('/event/eventbg.webp')",
+        }}
+      >
       <FallingLeavesEvents />
 
       {showBackdrop && (
@@ -94,6 +102,8 @@ export default function EventsPage() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+      )}
+    </>
   );
 }
