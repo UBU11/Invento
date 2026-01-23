@@ -13,7 +13,7 @@ const HaricharanCard: React.FC = () => (
 
     <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
       <div className="bg-[#A41F22] text-white font-bold text-[7px] lg:text-2xl uppercase px-3 lg:px-6 py-1 mt-5 lg:mt-0 mb-2 lg:mb-4 mt-0 lg:mt-12">
-        JAN 31, 26
+        JAN 31
       </div>
 
       <h2 className="text-xl lg:text-7xl lg:text-8xl text-[#A41F22] uppercase font-akira drop-shadow-sm">
