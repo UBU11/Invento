@@ -142,54 +142,54 @@ export default function ContactSection() {
         // Reset elements to initial state first
         resetElements();
 
-        elementTl = gsap.timeline({ delay: 0.5 });
+        elementTl = gsap.timeline({});
 
         if (logo)
           elementTl.to(
             logo,
-            { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" },
+            { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" },
             0,
           );
         if (bottomImg)
           elementTl.to(
             bottomImg,
-            { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" },
+            { opacity: 1, y: 0, duration: 1.5, ease: "power2.out" },
             0,
           );
         if (address)
           elementTl.to(
             address,
-            { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" },
+            { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" },
             0,
           );
         if (header)
           elementTl.to(
             header,
-            { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" },
+            { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
             0,
           );
         if (email)
           elementTl.to(
             email,
-            { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" },
+            { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
             0,
           );
         if (phone)
           elementTl.to(
             phone,
-            { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" },
+            { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
             0,
           );
         if (leftNavTitle)
           elementTl.to(
             leftNavTitle,
-            { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" },
+            { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" },
             0,
           );
         if (rightNavTitle)
           elementTl.to(
             rightNavTitle,
-            { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" },
+            { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" },
             0,
           );
 
