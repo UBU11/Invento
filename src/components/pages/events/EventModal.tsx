@@ -21,7 +21,7 @@ export default function EventModal({
   return (
     <div
       className="
-        absolute z-30
+        absolute z-[10000]
         left-1/2 top-1/2
         translate-x-1 translate-y-1
         w-[90%] max-w-6xl
@@ -66,40 +66,41 @@ export default function EventModal({
          
             <div className="space-y-5">
               <div className="text-lg md:text-xl font-bold">
-                <div className="text-red-500 uppercase tracking-wide">
+                <div className="text-red-500 uppercase tracking-wide font-urbanist">
                   Prize Pool
                 </div>
-                <div className="text-white">
+                <div className="text-white font-urbanist">
                   {event.prizePool}
                 </div>
               </div>
 
               <div className="text-lg md:text-xl font-bold">
-                <div className="text-red-500 uppercase tracking-wide">
+                <div className="text-red-500 font-urbanist uppercase tracking-wide">
                   Reg Fee
                 </div>
-                <div className="text-white">
+                <div className="text-white font-urbanist">
                   {event.regFee}
                 </div>
               </div>
             </div>
 
       
-            <div className="space-y-3 text-sm md:text-base">
+           <div className="space-y-3 md:space-y-6 text-sm md:text-base font-urbanist">
+
               <div>
-                <span className="text-red-500 font-bold uppercase">
+                <span className="text-red-500 font-bold font-urbanist uppercase">
                   Time:
                 </span>{" "}
                 {event.time}
               </div>
               <div>
-                <span className="text-red-500 font-bold uppercase">
+                <span className="text-red-500 font-bold font-urbanist uppercase">
                   Venue:
                 </span>{" "}
                 {event.venue}
               </div>
               <div>
-                <span className="text-red-500 font-bold uppercase">
+                <span className="text-red-500 font-bold font-urbanist uppercase">
                   Queries:
                 </span>{" "}
                  {event.contact}
@@ -108,7 +109,7 @@ export default function EventModal({
 
           </div>
 
-          <div className="flex justify-center md:justify-start">
+          <div className="flex justify-center md:justify-start font-urbanist">
             <button 
              onClick={(e) => {
                   window.open(event.registration, "_blank")
