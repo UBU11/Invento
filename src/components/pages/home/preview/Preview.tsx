@@ -107,14 +107,17 @@ const Preview = () => {
       <div className="hidden lg:block md:block">
         
         <section className="min-h-screen relative desktop-section">
-          
-          <Image
+          <Link href={"/coming-soon"}>
+           <Image
             src="/home/preview/saptha.webp"
             width={1200}
             height={300}
             alt="Saptha"
             className="absolute top-10 right-0 right-image z-10"
           />
+          
+          </Link>
+         
           
           <div className="absolute flex -bottom-18 w-full px-24 justify-end z-30">
              <Link href={"/coming-soon"} className="bg-[#A41F22] p-3 font-akira text-white right-btn">
@@ -129,6 +132,7 @@ const Preview = () => {
               KNOW MORE
             </Link>
           </div>
+          <Link href={"/coming-soon"}>
           <Image
             src="/home/preview/technical.webp"
             width={1200}
@@ -136,9 +140,12 @@ const Preview = () => {
             alt="Technical"
             className="absolute left-0 left-image"
           />
+          </Link>
         </section>
 
         <section className="min-h-screen relative desktop-section">
+          
+          <Link href={"/coming-soon"}>
           <Image
             src="/home/preview/general.webp"
             width={1200}
@@ -146,6 +153,13 @@ const Preview = () => {
             alt="General"
             className="absolute right-0 right-image"
           />
+          </Link>
+
+          <div className="absolute flex -bottom-18 w-full px-42 justify-end">
+            <Link href={"/coming-soon"} className="bg-[#A41F22] p-3 font-akira text-white left-btn">
+              KNOW MORE
+            </Link>
+          </div>
         </section>
       </div>
 
