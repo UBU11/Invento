@@ -6,13 +6,26 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SapthaEventDetails from "./SapthaEventDetails";
+import { usePreload } from "@/src/components/providers/LoadingProvider";
+import { LoadingScreen } from "@/src/components/loading/LoadingScreen";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const ASSETS = [
+  "/about-events/saptha/sapthalady.webp",
+  "/about-events/saptha/saptha-bg.webp",
+  "/about-events/saptha/natya-poster.webp",
+  "/about-events/saptha/taksati-poster.webp",
+  // "/about-events/saptha/saptha-mobile-bg.webp", // Currently unused as we reverted to shared BG
+];
+
 const SapthaEvent = () => {
+    
+  const { progress, done } = usePreload(ASSETS);
+  
   const containerRef = useRef<HTMLDivElement>(null);
   const bgWrapperRef = useRef<HTMLDivElement>(null); 
-  const mobileGradientRef = useRef<HTMLDivElement>(null); // New Gradient Ref
+  const mobileGradientRef = useRef<HTMLDivElement>(null); 
   const ladyRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descriptionRef = useRef<HTMLParagraphElement>(null);
@@ -21,6 +34,8 @@ const SapthaEvent = () => {
 
   useGSAP(
     () => {
+      if (!done) return; // Wait for loading to finish before animating
+
       const mm = gsap.matchMedia();
 
       // SHARED ENTRY ANIMATIONS 
@@ -170,8 +185,12 @@ const SapthaEvent = () => {
       });
       
     },
-    { scope: containerRef }
+    { scope: containerRef, dependencies: [done] }
   );
+
+  if (!done) {
+    return <LoadingScreen progress={progress} />;
+  }
 
   return (
     <div className="relative w-full bg-black">
