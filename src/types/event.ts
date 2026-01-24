@@ -6,6 +6,7 @@ export type EventCategory =
   | "NATYA"
   | "TAKSATHI"
   | "PROSHOW"
+  | "MERCH";
   
 
 export interface Event {

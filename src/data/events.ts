@@ -761,7 +761,7 @@ export const eventsData: Event[] = [
     title: "MERCH - LIMITED EDITION",
     description:
       "ONLY 30 PIECES AVAILABLE PRODUCT FEATURES Official INVENTO\u201926 design Minimal and professional styling Soft and breathable fabric Comfortable regular fit Durable and long-lasting print IMPORTANT NOTES Submission of this form is mandatory for advance booking. Orders once placed cannot be cancelled or modified. Quantity is limited and subject to availability. Details regarding payment confirmation and T-shirt collection will be communicated separately.",
-    category: "WORKSHOP",
+    category: "MERCH",
     time: "",
     venue: "Govt. Engineering College Sreekrishnapuram, Palakkad",
     poster:
@@ -779,7 +779,7 @@ export const eventsData: Event[] = [
     title: "MERCH - STANDARD EDITION",
     description:
       "ONLY 30 PIECES AVAILABLE PRODUCT FEATURES Official INVENTO\u201926 design Minimal and professional styling Soft and breathable fabric Comfortable regular fit Durable and long-lasting print IMPORTANT NOTES Submission of this form is mandatory for advance booking. Orders once placed cannot be cancelled or modified. Quantity is limited and subject to availability. Details regarding payment confirmation and T-shirt collection will be communicated separately.",
-    category: "WORKSHOP",
+    category: "MERCH",
     time: "",
     venue: "Government Engineering College, Sreekrishnapuram",
     poster:

@@ -14,6 +14,7 @@ const categories: (EventCategory | "ALL")[] = [
   "TECH",
   "GENERAL",
   "TAKSATHI",
+  "MERCH"
 ];
 
 const categoryColors: Record<EventCategory | "ALL", string> = {
@@ -22,6 +23,7 @@ const categoryColors: Record<EventCategory | "ALL", string> = {
   NATYA: "bg-pink-600",
   TECH: "bg-indigo-500",
   GENERAL: "bg-gray-500",
+  MERCH: "bg-violet-600",
   TAKSATHI: "bg-amber-700",
   PROSHOW: "bg-red-500",
   ALL: "bg-red-600",
