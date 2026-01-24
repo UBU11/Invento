@@ -2,7 +2,7 @@ import Image from "next/image";
 import proshowsCard from "@/public/home/preview/proshows-card.png";
 
 const Title: React.FC = () => (
-  <div className="relative w-full scale-105 origin-center">
+  <div className="relative w-full z-10 scale-105 origin-center">
     <Image
       src={proshowsCard}
       alt="Proshow bg"
