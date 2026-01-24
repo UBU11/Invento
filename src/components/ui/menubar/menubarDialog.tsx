@@ -102,13 +102,15 @@ export default function MenuBarDialog({ onClose }: MenuBarDialogProps) {
           ))}
         </div>
 
-        <Link scroll={false} href="/events" onClick={onClose}>
-  <button className="w-fit h-fit">
-    <p className="p-4 bg-[#A41F22] hover:text-[#A41F22] text-white hover:bg-white transition-colors">
-      REGISTER
-    </p>
-  </button>
+        <Link
+  href="/events"
+  scroll={false}
+  onClick={onClose}
+  className="p-4 bg-[#A41F22] text-white hover:text-[#A41F22] hover:bg-white transition-colors inline-block"
+>
+  REGISTER
 </Link>
+
 
         <h1 className="text-4xl xl:text-8xl text-transparent bg-clip-text bg-linear-to-b from-[#FFFFFF] to-[#3E3E3EB1]">
           INVENTO&apos; 26
