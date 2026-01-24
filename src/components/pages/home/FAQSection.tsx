@@ -117,10 +117,13 @@ export default function FAQSection() {
         }
       };
 
-      // Section slides up immediately when preview section ends
+      // Section slides up and gets pinned when preview section ends
       ScrollTrigger.create({
         trigger: firstSpacer || spacer,
         start: "bottom top",
+        end: "bottom bottom",
+        pin: section,
+        pinSpacing: true,
         onEnter: () => {
           setIsVisible(true);
           // Immediately slide section up completely
