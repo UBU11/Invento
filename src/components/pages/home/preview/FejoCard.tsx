@@ -24,7 +24,7 @@ const FejoCard: React.FC = () => (
       <Link
         scroll={false}
         href={"/events"}
-        className="absolute bottom-2 md:bottom-12 bg-white text-black text-[5px] lg:text-xl font-bold uppercase px-1 py-1 lg:px-8 lg:py-3"
+        className="absolute bottom-3 md:bottom-12 bg-white text-black text-[5px] lg:text-xl font-bold uppercase px-1 py-1 lg:px-8 lg:py-3"
       >
         REGISTER
       </Link>

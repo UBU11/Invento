@@ -13,7 +13,11 @@ export default function EventScheduleHeader({
   const touchStartX = useRef<number | null>(null)
   const touchEndX = useRef<number | null>(null)
 
-  const MIN_SWIPE_DISTANCE = 50
+  const MIN_SWIPE_DISTANCE =
+  typeof window !== "undefined"
+    ? Math.min(120, window.innerWidth * 0.45)
+    : 80
+
   const days: (1 | 2 | 3)[] = [1, 2, 3]
 
   const handleTouchStart = (e: React.TouchEvent) => {

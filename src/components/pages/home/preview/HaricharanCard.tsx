@@ -20,7 +20,7 @@ const HaricharanCard: React.FC = () => (
         HARICHARAN
       </h2>
 
-      <p className="text-[#A41F22] text-[6px] lg:text-lg font-medium lg:mt-4 max-w-[340px] lg:max-w-3xl px-4 leading-relaxed">
+      <p className="text-[#A41F22] mb-7 text-[6px] lg:text-lg font-medium lg:mt-4 max-w-[340px] lg:max-w-3xl px-4 leading-relaxed">
         The Sound of Legends. Witness the vocal powerhouse behind{" "}
         <br className="hidden md:block" />
         South India’s biggest cinematic hits.
@@ -28,7 +28,7 @@ const HaricharanCard: React.FC = () => (
       <Link
         scroll={false}
         href={"/events"}
-        className="absolute bottom-3 md:bottom-15 bg-[#A41F22] text-white text-[5px] lg:text-xl font-bold uppercase px-1 py-1 lg:px-8 lg:py-3"
+        className="absolute bottom-4 md:bottom-15 bg-[#A41F22] text-white text-[5px] lg:text-xl font-bold uppercase px-1 py-1 lg:px-8 lg:py-3"
       >
         REGISTER
       </Link>
