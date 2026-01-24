@@ -80,7 +80,7 @@ const Preview = () => {
     <div ref={mainRef} className="w-full overflow-hidden">
       <div className="hidden lg:block md:block">
         <section className="min-h-screen relative desktop-section">
-          <Link scroll={false} href="/coming-soon">
+          <Link scroll={false} href="/about-events?category=saptha">
             <Image
               src={sapthaWeb}
               width={1200}
@@ -146,33 +146,39 @@ const Preview = () => {
       {/* MOBILE */}
       <div className="md:hidden lg:hidden min-h-screen flex justify-center flex-col gap-10 py-10">
         <div className="w-full flex justify-end">
-          <Image
-            src={sapthaMobile}
-            width={330}
-            height={100}
-            alt=""
-            className="right-image-mobile"
-          />
+          <Link href="/about-events?category=saptha">
+            <Image
+              src={sapthaMobile}
+              width={330}
+              height={100}
+              alt=""
+              className="right-image-mobile"
+            />
+          </Link>
         </div>
 
         <div className="w-full flex justify-start">
-          <Image
-            src={technicalMobile}
-            width={330}
-            height={100}
-            alt=""
-            className="left-image-mobile"
-          />
+          <Link href="/about-events?category=technical">
+            <Image
+              src={technicalMobile}
+              width={330}
+              height={100}
+              alt=""
+              className="left-image-mobile"
+            />
+          </Link>
         </div>
 
         <div className="w-full flex justify-end">
-          <Image
-            src={generalMobile}
-            width={330}
-            height={100}
-            alt=""
-            className="right-image-mobile"
-          />
+          <Link href="/about-events?category=general">
+            <Image
+              src={generalMobile}
+              width={330}
+              height={100}
+              alt=""
+              className="right-image-mobile"
+            />
+          </Link>
         </div>
       </div>
     </div>
