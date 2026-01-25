@@ -1,4 +1,4 @@
-export const groupEvents = [
+export const generalGroupEvents = [
     { image: "event1.webp", title: "TREASURE HUNT", date: "Friday | 29.Jan.2025" },
     { image: "event2.webp", title: "QUIZ COMPETITION", date: "Saturday | 30.Jan.2025" },
     { image: "event3.webp", title: "DEBATE", date: "Sunday | 31.Jan.2025" },
@@ -7,7 +7,7 @@ export const groupEvents = [
     { image: "event6.webp", title: "ESSAY WRITING", date: "Sunday | 31.Jan.2025" },
 ];
 
-export const soloEvents = [
+export const generalSoloEvents = [
     { image: "event1.webp", title: "PUBLIC SPEAKING", date: "Friday | 29.Jan.2025" },
     { image: "event2.webp", title: "CREATIVE WRITING", date: "Saturday | 30.Jan.2025" },
     { image: "event3.webp", title: "MEME CREATION", date: "Sunday | 31.Jan.2025" },
