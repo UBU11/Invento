@@ -11,28 +11,46 @@ if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 const faqItems = [
   {
     id: 1,
-    question: "What is Invento?",
+    question: "What is Invento and who can participate?",
     answer:
-      "Invento, the annual techno-cultural fest of Government Engineering College, Palakkad, is where innovation, creativity, and collaboration collide.",
+      "Invento is the techfest of GEC Palakkad, featuring technical and non-technical events, workshops, talk sessions, and hackathons. The fest is open to undergraduate and postgraduate students from all colleges, unless specified otherwise for an event.",
   },
   {
     id: 2,
-    question: "What does Invento offer?",
+    question: "How do I register for events?",
     answer:
-      "Invento offers vibrant mix of events ranging from hackathons and workshops to cultural nights and intellectual games, Invento celebrates the spirit of learning, building, and exploring beyond classrooms.",
+      "Register through the official Invento website by selecting your desired event and completing payment via our secure gateway. Event-specific details are available on each event page."
   },
   {
     id: 3,
-    question: "What is the purpose of Invento?",
+    question: "Can I participate in multiple events?",
     answer:
-      "It brings together students from all departments and colleges to showcase their technical skills, creative ideas, and passion for discovery.",
+      "Yes! You can register for multiple events as long as schedules don't overlap. Participation may be individual or team-based depending on the event—check each event page for team size details."
   },
   {
     id: 4,
-    question: "Is there customer support?",
+    question: "What are the payment methods and refund policy?",
     answer:
-      "Yes, we offer 24/7 customer support via email, chat, and phone to ensure your success with our platform.",
+      "We accept UPI, debit cards, and credit cards. Registration fees are non-refundable once payment is completed, except in the case of event cancellation by organizers."
   },
+  {
+    id: 5,
+    question: "Will I receive confirmation after registration?",
+    answer:
+      "Yes. You'll receive a confirmation message and event details at your registered email address after successful registration."
+  },
+  {
+    id: 6,
+    question: "Will participants receive certificates and prizes?",
+    answer:
+      "All registered participants who attend will receive participation certificates. Winners will be awarded merit certificates and prizes as announced."   
+  },
+  {
+    id: 7,
+    question: "Who can I contact for further queries?",
+    answer:
+    "For event-specific queries, contact the respective event coordinators. For general questions about registration, payment, or the fest, please visit our Contact page."
+  }
 ];
 
 export default function FAQSection() {

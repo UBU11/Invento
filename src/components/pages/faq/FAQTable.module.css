@@ -68,7 +68,7 @@
 
 .questionText {
     flex: 1;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 800;
 }
 
@@ -78,6 +78,7 @@
     }
     .questionText {
         margin-left: 150px;
+        font-size: 20px;
     }
     .answer {
         margin-left: 150px;
@@ -95,6 +96,7 @@
 
     .questionText {
         margin-left: 400px;
+        font-size: 20px;
     }
     .answer {
         margin-left: 610px;

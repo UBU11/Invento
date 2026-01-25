@@ -74,7 +74,7 @@ export default function EventTable({
         />
 
         {open && (
-          <div className="absolute top-12 left-4 backdrop-blur-md p-4 grid gap-2 z-30 w-48">
+          <div className="absolute top-12 left-4 backdrop-blur-md p-4 grid gap-2 z-1000 w-48">
             {categories.map((cat) => (
               <button
                 key={cat}
