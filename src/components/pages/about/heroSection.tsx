@@ -11,6 +11,7 @@ import HeroSectionCard from "@/src/components/pages/about/Cards/heroSectionCard"
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
+ScrollTrigger.defaults({ markers: true });
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -42,9 +43,10 @@ export default function HeroSection() {
             scrollTrigger: {
               trigger: sectionRef.current,
               start: "top top",
-              end: "+=1200%",
+              end: "+=200%",
               pin: true,
-              scrub: 2,
+              pinSpacing: false,
+              scrub: 0.8,
               invalidateOnRefresh: true,
             },
           });
@@ -62,8 +64,8 @@ export default function HeroSection() {
               textRef.current,
               {
                 y: "-60vh",
-                duration: 0.7,
-                ease: "power1.inOut",
+                duration: 0.2,
+                ease: "power3.inOut",
               },
               0,
             )
@@ -121,7 +123,6 @@ export default function HeroSection() {
                 "<",
               );
           }
-          tl.to({}, { duration: 3 });
         },
         sectionRef,
       );

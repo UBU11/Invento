@@ -29,27 +29,25 @@ export default function SecondSection() {
 
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: "#hero-section",
+          trigger: sectionRef.current,
           start: "top top",
-          end: "+=1200%",
-          scrub: true,
+          end: "+=400%",
+          pin: true,
+          scrub: 0.4,
           invalidateOnRefresh: true,
         },
       });
 
-      tl.to({}, { duration: 3 })
-        .to(sectionRef.current, {
-          yPercent: 0,
-          duration: 2,
-          ease: "none",
-          stagger: 0.1,
-        })
+      tl.to(sectionRef.current, {
+        yPercent: 0,
+        duration: 0.6,
+        ease: "power1.out",
+      })
         .to(
           svgRef.current,
           {
             opacity: 0.5,
-            duration: 1,
-            delay: 1.2,
+            duration: 0.2,
             ease: "circ.inOut",
           },
           "<",
@@ -59,21 +57,20 @@ export default function SecondSection() {
           {
             opacity: 1,
             y: 0,
-            delay: 2,
-            duration: 2,
+            duration: 0.5,
             ease: "expo.out",
           },
-          "-=1.5",
+          ">",
         )
         .to(
           bottomRightRef.current,
           {
             opacity: 1,
             y: 0,
-            duration: 2,
+            duration: 0.5,
             ease: "expo.out",
           },
-          "-=1.0",
+          ">",
         );
     }, sectionRef);
 
@@ -83,7 +80,7 @@ export default function SecondSection() {
   return (
     <section
       ref={sectionRef}
-      className="fixed top-0 left-0 w-full h-screen bg-white overflow-hidden z-20"
+      className="relative w-full h-screen bg-white overflow-hidden z-20"
     >
       <div className="relative w-full h-full">
         <Image

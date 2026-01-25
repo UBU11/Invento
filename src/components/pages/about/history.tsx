@@ -78,8 +78,8 @@ export default function History() {
         scrollTrigger: {
           trigger: spacer,
           start: "top top",
-          end: "bottom bottom",
-          scrub: 2,
+          end: "+=400%",
+          scrub: 0.8,
           invalidateOnRefresh: true,
         },
       });
@@ -89,55 +89,45 @@ export default function History() {
         container,
         { xPercent: 100 },
         { xPercent: 0, duration: 2, ease: "none" },
-      ).to([track, logo, topText, bottomText], {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        stagger: 0.1,
-        ease: "power2.out",
-      });
+      )
+        .to([track, logo, topText, bottomText], {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.1,
+          ease: "power2.out",
+        })
+        .to({}, { duration: 3 });
 
       // --- PHASE 2: CLEAR STAGE ---
-      tl.to(
-        [track, logo, topText, bottomText],
-        {
-          opacity: 0,
-          y: -50,
-          duration: 1,
-          stagger: 0.05,
-        },
-        "+=0.5",
-      );
+      tl.to([track, logo, topText, bottomText], {
+        opacity: 0,
+        y: -50,
+        duration: 1,
+        stagger: 0.05,
+      });
 
-      tl.to(
-        title,
-        {
-          y: () => {
-            // Dynamic calculation to hit top of window with padding
-            const currentTop = title.getBoundingClientRect().top;
-            if (window.innerWidth < 768) {
-              return `${-(currentTop - 30)}px`; // Mobile: 85px from top (nav height)
-            }
-            return `${-(currentTop - 25)}px`; // Desktop: 40px from top
-          },
-          x: 0,
-          scale: 1,
-          duration: 1.5,
-          ease: "power2.inOut",
+      tl.to(title, {
+        y: () => {
+          // Dynamic calculation to hit top of window with padding
+          const currentTop = title.getBoundingClientRect().top;
+          if (window.innerWidth < 768) {
+            return `${-(currentTop - 30)}px`; // Mobile: 85px from top (nav height)
+          }
+          return `${-(currentTop - 25)}px`; // Desktop: 40px from top
         },
-        "<",
-      );
+        x: 0,
+        scale: 1,
+        duration: 1.5,
+        ease: "power2.inOut",
+      });
 
       // --- PHASE 4: DRILL DOWN REVEAL ---
-      tl.to(
-        drillDown,
-        {
-          opacity: 1,
-          pointerEvents: "auto",
-          duration: 0.1,
-        },
-        "-=1",
-      );
+      tl.to(drillDown, {
+        opacity: 1,
+        pointerEvents: "auto",
+        duration: 0.1,
+      });
 
       // Add synchronization label
       tl.addLabel("contentReveal", "-=0.5");
