@@ -4,7 +4,7 @@ import Link from "next/link";
 const HaricharanCard: React.FC = () => (
   <div className="relative -mt-9 lg:-mt-25 w-full scale-105 origin-center">
     <Image
-      src={"/home/preview/haricharan-card.png"}
+      src={"/home/preview/haricharan-card.webp"}
       alt="Haricharan Proshow bg"
       width={1500}
       height={300}

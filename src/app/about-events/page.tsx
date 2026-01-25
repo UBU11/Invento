@@ -14,9 +14,8 @@ const EventsContent = () => {
   if (category === "saptha") {
     return <SapthaEvent />;
   }
-  
   if (category === "technical") {
-     return <TechnicalEvent />;
+    return <TechnicalEvent />;
   }
 
   if (category === "general") {
@@ -25,7 +24,7 @@ const EventsContent = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center text-white font-akira text-2xl">
-        SELECT AN EVENT
+      SELECT AN EVENT
     </div>
   );
 };

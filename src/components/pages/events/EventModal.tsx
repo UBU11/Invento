@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
-import { useEffect } from "react"
-import { Event } from "@/src/types/event"
+import { useEffect } from "react";
+import { Event } from "@/src/types/event";
 
 export default function EventModal({
   event,
   onClose,
 }: {
-  event: Event
-  onClose: () => void
+  event: Event;
+  onClose: () => void;
 }) {
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose()
-    }
-    window.addEventListener("keydown", handler)
-    return () => window.removeEventListener("keydown", handler)
-  }, [onClose])
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [onClose]);
 
   return (
     <div
@@ -40,15 +40,13 @@ export default function EventModal({
       </button>
 
       <div className="flex flex-col md:flex-row gap-8 md:gap-20 px-6 md:px-10 py-8 md:py-10">
-
         <img
           src={event.poster}
           alt={event.title}
-          className="w-full md:w-72 h-48 md:h-[20rem] object-cover border-4 border-lime-400"
+          className="w-full md:w-72 h-full md:h-full object-cover border-4 border-lime-400"
         />
 
         <div className="flex-1 text-white font-flood">
-
           <h2 className="text-base md:text-4xl font-extrabold uppercase font-akira mb-5">
             {event.title}
           </h2>
@@ -60,10 +58,7 @@ export default function EventModal({
             {event.description}
           </p>
 
-        
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
-
-         
             <div className="space-y-5">
               <div className="text-lg md:text-xl font-bold">
                 <div className="text-red-500 uppercase tracking-wide font-urbanist">
@@ -78,15 +73,11 @@ export default function EventModal({
                 <div className="text-red-500 font-urbanist uppercase tracking-wide">
                   Reg Fee
                 </div>
-                <div className="text-white font-urbanist">
-                  {event.regFee}
-                </div>
+                <div className="text-white font-urbanist">{event.regFee}</div>
               </div>
             </div>
 
-      
-           <div className="space-y-3 md:space-y-6 text-sm md:text-base font-urbanist">
-
+            <div className="space-y-3 md:space-y-6 text-sm md:text-base font-urbanist">
               <div>
                 <span className="text-red-500 font-bold font-urbanist uppercase">
                   Time:
@@ -103,24 +94,23 @@ export default function EventModal({
                 <span className="text-red-500 font-bold font-urbanist uppercase">
                   Queries:
                 </span>{" "}
-                 {event.contact}
+                {event.contact}
               </div>
             </div>
-
           </div>
 
           <div className="flex justify-center md:justify-start font-urbanist">
-            <button 
-             onClick={(e) => {
-                  window.open(event.links.registration, "_blank")
-                }}
-            className="bg-red-600 px-10 md:px-16 py-3 text-xs md:text-sm font-bold uppercase hover:bg-red-700">
+            <button
+              onClick={(e) => {
+                window.open(event.links.registration, "_blank");
+              }}
+              className="bg-red-600 px-10 md:px-16 py-3 text-xs md:text-sm font-bold uppercase hover:bg-red-700"
+            >
               Register
             </button>
           </div>
-
         </div>
       </div>
     </div>
-  )
+  );
 }
