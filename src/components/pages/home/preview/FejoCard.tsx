@@ -54,7 +54,7 @@ const FejoCard: React.FC = () => {
     >
       <div ref={cardRef} className="w-full origin-center">
         <Image
-          src={"/home/preview/fejo-card.png"}
+          src={"/home/preview/fejo-card.webp"}
           alt="Proshow bg"
           width={1500}
           height={300}
