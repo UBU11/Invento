@@ -177,7 +177,7 @@ const Preview = () => {
           <div className="absolute flex -bottom-18 w-full px-24 justify-end z-30">
             <Link
               href="/about-events?category=saptha"
-              className="bg-[#A41F22] p-3 font-akira text-white right-btn"
+              className="bg-[#A41F22] px-3 py-2 text-sm lg:p-3 lg:text-base font-akira text-white right-btn"
             >
               KNOW MORE
             </Link>
@@ -188,7 +188,7 @@ const Preview = () => {
           <div className="absolute flex -bottom-18 w-full px-42 justify-end z-30">
             <Link
               href="/about-events?category=technical"
-              className="bg-[#A41F22] p-3 font-akira text-white left-btn relative z-50"
+              className="bg-[#A41F22] px-3 py-2 text-sm lg:p-3 lg:text-base font-akira text-white left-btn relative z-50"
               style={{ pointerEvents: 'auto' }}
             >
               KNOW MORE
@@ -220,7 +220,7 @@ const Preview = () => {
           <div className="absolute flex bottom-0 w-full px-24 justify-end" style={{ zIndex: 100 }}>
             <Link
               href="/about-events?category=general"
-              className="bg-[#A41F22] p-3 font-akira text-white left-btn"
+              className="bg-[#A41F22] px-3 py-2 text-sm lg:p-3 lg:text-base font-akira text-white left-btn"
             >
               KNOW MORE
             </Link>
@@ -230,7 +230,7 @@ const Preview = () => {
 
       {/* MOBILE */}
       <div className="md:hidden lg:hidden min-h-screen flex justify-center flex-col gap-10 py-10">
-        <div className="w-full flex justify-end">
+        <div className="w-full flex flex-col items-end gap-4 px-4">
           <Link scroll={false} href="/about-events?category=saptha">
             <Image
               src={sapthaMobile}
