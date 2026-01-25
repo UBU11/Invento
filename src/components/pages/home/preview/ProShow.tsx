@@ -6,25 +6,28 @@ import Title from "./Title";
 import Fejo from "./Fejo";
 import Haricharan from "./Haricharan";
 
+import redBlurPic from "@/public/home/preview/red-blur.webp";
+
 const ProShow: React.FC = () => {
-    return (
-        <section className="relative w-full min-h-screen flex flex-col items-center justify-start text-white pb-20">
-            <div className="absolute inset-0 -z-20">
-                <Image
-                    src={"/home/preview/red-blur.webp"}
-                    alt="Background"
-                    fill
-                    className="object-cover"
-                    priority
-                />
-            </div>
-            <div className="relative z-10 pt-12 lg:pt-32 flex flex-col items-center w-full">
-                <Title />
-                <Fejo />
-                <Haricharan />
-            </div>
-        </section>
-    );
+  return (
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-start text-white pb-20">
+      {/*<div className="absolute inset-0 -z-20">
+        <Image
+          src={redBlurPic}
+          alt="Background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>*/}
+      <div className="relative z-10 pt-12 lg:pt-32 flex flex-col items-center w-full">
+        <Title />
+        <Fejo />
+        <Haricharan />
+      </div>
+    </section>
+  );
 };
 
 export default ProShow;

@@ -1,21 +1,15 @@
+"use client";
+
 import { useEffect, useRef, useState, type FC } from "react";
 import { akira } from "@/src/lib/fonts";
 import Image from "next/image";
-
 import "./home.css";
+
+/* ------------------ Typing Text ------------------ */
 
 interface TypingTextProps {
   text: string;
   speed?: number;
-}
-
-interface RotatingCanvasTextProps {
-  duration?: number;
-}
-
-interface LoadingScreenProps {
-  loadingDelay?: number;
-  onComplete: () => void;
 }
 
 export default function TypingText({ text, speed = 100 }: TypingTextProps) {
@@ -33,19 +27,22 @@ export default function TypingText({ text, speed = 100 }: TypingTextProps) {
   }, [text, speed]);
 
   return (
-    <h1
-      className={`${akira.className} text-white font-bold text-5xl lg:text-9xl`}
-    >
+    <h1 className={`${akira.className} text-white font-bold text-5xl lg:text-9xl`}>
       {displayedText}
     </h1>
   );
 }
 
+/* ------------------ Rotating Canvas Loader ------------------ */
+
+interface RotatingCanvasTextProps {
+  progress: number; // REAL progress (0–100)
+}
+
 export const RotatingCanvasText: FC<RotatingCanvasTextProps> = ({
-  duration = 0,
+  progress,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [percent, setPercent] = useState(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -60,14 +57,21 @@ export const RotatingCanvasText: FC<RotatingCanvasTextProps> = ({
     const text = " INVENTO INVENTO INVENTO INVENTO INVENTO ";
     const radius = 100;
 
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.save();
+
     ctx.font = "300 18.5px sans-serif";
     ctx.textBaseline = "bottom";
     ctx.textAlign = "center";
     ctx.fillStyle = "#000000";
 
     ctx.translate(canvas.width / 2, canvas.height / 2);
+
     const angleStep = (2 * Math.PI) / text.length;
     const spacing = 1.025;
+    const rotation = (progress / 100) * Math.PI * 2;
+
+    ctx.rotate(rotation);
 
     for (let i = 0; i < text.length; i++) {
       ctx.rotate(angleStep * spacing);
@@ -76,59 +80,40 @@ export const RotatingCanvasText: FC<RotatingCanvasTextProps> = ({
       ctx.fillText(text[i], 0, 0);
       ctx.restore();
     }
-  }, []);
 
-  useEffect(() => {
-    const start = performance.now();
-
-    const tick = (now: number) => {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-
-      const eased =
-        progress < 0.5
-          ? 4 * progress * progress * progress
-          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-
-      setPercent(Math.floor(eased * 100));
-
-      if (progress < 1) requestAnimationFrame(tick);
-    };
-
-    requestAnimationFrame(tick);
-  }, [duration]);
+    ctx.restore();
+  }, [progress]);
 
   return (
     <div className="relative flex flex-col items-center justify-center mt-20">
-      {duration > 0 && (
-        <h1 className={`font-akira text-black text-4xl font-bold`}>
-          {percent}%
-        </h1>
-      )}
+      <h1 className="font-akira text-black text-4xl font-bold">
+        {progress}%
+      </h1>
 
       <canvas ref={canvasRef} className="animate-spin-slow" />
 
       <Image
-        src="/logo.png"
+        src="/logo-filled.svg"
         alt="logo"
         width={112}
         height={112}
         className="absolute w-28 h-28"
         style={{ top: "140px" }}
       />
-
     </div>
   );
 };
 
-export const LoadingScreen: React.FC<LoadingScreenProps> = ({
-  loadingDelay = 2000,
-}) => {
-  const rotatingDuration = loadingDelay;
+/* ------------------ Loading Screen ------------------ */
 
+interface LoadingScreenProps {
+  progress: number;
+}
+
+export const LoadingScreen: FC<LoadingScreenProps> = ({ progress }) => {
   return (
-    <section className="flex bg-white min-h-screen justify-center items-center">
-      <RotatingCanvasText duration={rotatingDuration} />
+    <section className="fixed inset-0 bg-white z-50 flex items-center justify-center">
+      <RotatingCanvasText progress={progress} />
     </section>
   );
 };

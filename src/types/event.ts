@@ -4,10 +4,15 @@ export type EventCategory =
   | "GENERAL"
   | "SAPTHA"
   | "NATYA"
+  | "TAKSATHI"
+  | "PROSHOW"
+  | "MERCH";
+  
 
 export interface Event {
   id: string
   title: string
+  name: string
   description: string
   category: EventCategory
   time: string
@@ -17,6 +22,9 @@ export interface Event {
   prizePool?: string
   regFee?: string
   contact?: string
+  links: {
+    registration: string;
+  };
 }
 
 
