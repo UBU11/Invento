@@ -33,7 +33,7 @@ const socialLinks: SocialLink[] = [
     mobileLeft: "170px",
   },
   {
-    href: "#",
+    href: "https://www.linkedin.com/company/invento-gecpalakkad/",
     src: "/contact/in.svg",
     alt: "LinkedIn",
     left: "592px",
