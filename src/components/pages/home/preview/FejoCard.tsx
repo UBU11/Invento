@@ -50,7 +50,7 @@ const FejoCard: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="relative  sm:scale-105 -mt-8 lg:-mt-24 w-full z-0"
+      className="relative scale-105 -mt-8 lg:-mt-24 w-full z-0"
     >
       <div ref={cardRef} className="w-full origin-center">
         <Image
