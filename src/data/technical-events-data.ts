@@ -10,15 +10,11 @@ export const technicalCompetitions = [
         date: "Thu-Fri | 29-30.Jan.2026" 
     },
     { 
-        image: "https://hoomans-blob-prod.s3.ap-south-1.amazonaws.com/makemypass/event/632ce799-cfc0-4524-8ed6-c8fc82ace280/33-logo.png", 
+        image: "https://firebasestorage.googleapis.com/v0/b/enigma-d05b9.firebasestorage.app/o/invento%2Fprojectexpo.jpeg?alt=media&token=72f154e1-fdb3-46e2-8a56-d5ff3e0c0f0c",
         title: "PROJECT EXPO", 
         date: "Friday | 30-31.Jan.2026" 
     },
-    {
-        image: "https://hoomans-blob-prod.s3.ap-south-1.amazonaws.com/makemypass/event/2dea0b82-5719-479a-979a-e2c41e136c29/39-banner.png",
-        title: "ROBO SOCCER",
-        date: "Friday | 30.Jan.2026"
-    }
+   
 ];
 
 export const technicalWorkshops = [
