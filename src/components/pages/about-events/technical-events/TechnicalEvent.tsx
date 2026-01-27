@@ -9,6 +9,8 @@ import { useTechnicalAnimations } from "./useTechnicalAnimations";
 const ASSETS = [
   "/about-events/technical/technical-girl.webp",
   "/about-events/technical/technical-bg.webp",
+  "/about-events/technical/competitions.webp",
+  "/about-events/technical/workshops.webp",
 ];
 
 const TechnicalEvent = () => {
@@ -21,7 +23,9 @@ const TechnicalEvent = () => {
     mobileGradientRef, 
     girlRef, 
     titleRef, 
-    descriptionRef
+    descriptionRef,
+    competitionsRef,
+    workshopsRef
   } = useTechnicalAnimations(done);
 
   if (!done) {
@@ -83,6 +87,29 @@ const TechnicalEvent = () => {
                     <br className="block my-2" />
                     From hackathons to coding contests, robotics to AI challenges, push your technical boundaries
                 </p>
+            </div>
+            
+            {/* Third Section: Images */}
+            <div className="absolute inset-0 flex items-center justify-center z-40 pointer-events-none flex-col md:block">
+                {/* Competitions Image */}
+                <div ref={competitionsRef} className="absolute left-0 md:left-[5%] top-[50%] md:top-[10%] w-[100vw] h-[50vh] md:w-[90vw] md:h-[90vh]">
+                    <Image 
+                        src="/about-events/technical/competitions.webp"
+                        alt="Competitions"
+                        fill
+                        className="object-contain" 
+                    />
+                </div>
+
+                {/* Workshops Image */}
+                <div ref={workshopsRef} className="absolute right-0 md:right-[4%] top-[68%] md:top-[12%] w-[85vw] h-[42vh] md:w-[75vw] md:h-[75vh]">
+                    <Image 
+                        src="/about-events/technical/workshops.webp"
+                        alt="Workshops"
+                        fill
+                        className="object-contain"
+                    />
+                </div>
             </div>
 
         </div>
