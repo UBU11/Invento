@@ -12,6 +12,8 @@ export const useTechnicalAnimations = (done: boolean) => {
     const girlRef = useRef<HTMLDivElement>(null);
     const titleRef = useRef<HTMLHeadingElement>(null);
     const descriptionRef = useRef<HTMLParagraphElement>(null);
+    const competitionsRef = useRef<HTMLDivElement>(null);
+    const workshopsRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
         if (!done) return; 
@@ -112,6 +114,12 @@ export const useTechnicalAnimations = (done: boolean) => {
 
             tl.to(titleRef.current, { y: -2000, scale: 0.5, duration: 0.5, ease: "power2.in"}, ">");
             tl.to(descriptionRef.current, { y: -1000, autoAlpha: 0, duration: 0.5, ease: "power2.in" }, "<");
+
+            if (competitionsRef.current && workshopsRef.current) {
+                tl.fromTo(competitionsRef.current, { x: "-100vw", autoAlpha: 1 }, { x: "0vw", autoAlpha: 1, duration: 1.5, ease: "power2.out" }, "<");
+                tl.to(competitionsRef.current, { y: "-80vh", duration: 1.5, ease: "power2.out" }, ">");
+                tl.fromTo(workshopsRef.current, { x: "100vw", autoAlpha: 1 }, { x: "0vw", autoAlpha: 1, duration: 1.5, ease: "power2.out" }, "<");
+            }
         });
 
         // 2. MOBILE ANIMATIONS (<= 768px)
@@ -135,19 +143,33 @@ export const useTechnicalAnimations = (done: boolean) => {
 
             tl.fromTo(girlRef.current, 
                 { y: 0 },
-                { y: -250, duration: 1, ease: "none" }, 0
+                { y: -320, duration: 1, ease: "none" }, 0
             );
 
             tl.fromTo(titleRef.current,
                 { y: 0 }, 
-                { y: -250, duration: 1, ease: "none" }, 0
+                { y: -350, duration: 1, ease: "none" }, 0
             );
 
             if (descriptionRef.current) {
                 tl.fromTo(descriptionRef.current, 
                     { y: -100, autoAlpha: 0 }, 
-                    { y: -100, autoAlpha: 1, duration: 1, ease: "power2.inOut" }, "-=0.5"
+                    { y: -200, autoAlpha: 1, duration: 1, ease: "power2.inOut" }, "-=0.5"
                 ); 
+            }
+
+            if (competitionsRef.current) {
+                tl.fromTo(competitionsRef.current, 
+                    { x: "-100vw", y: "0vh", autoAlpha: 1 }, 
+                    { x: "0vw", y: "-3vh", duration: 1.5, ease: "power2.out" }, ">"
+                );
+            }
+
+            if (workshopsRef.current) {
+                tl.fromTo(workshopsRef.current, 
+                    { x: "100vw", y: "3vh", autoAlpha: 1 }, 
+                    { x: "0vw", y: "0vh", duration: 1.5, ease: "power2.out" }, ">"
+                );
             }
         });
         
@@ -159,7 +181,9 @@ export const useTechnicalAnimations = (done: boolean) => {
         mobileGradientRef,
         girlRef,
         titleRef,
-        descriptionRef
+        descriptionRef,
+        competitionsRef,
+        workshopsRef
     };
 };
 

@@ -9,7 +9,8 @@ import { useGeneralAnimations } from "./useGeneralAnimations";
 const ASSETS = [
   "/about-events/general/general-sam.webp",
   "/about-events/general/general-bg.webp",
-
+  "/about-events/general/mudracing web.webp",
+  "/about-events/general/roadies web.webp",
 ];
 
 const GeneralEvent = () => {
@@ -90,15 +91,36 @@ const GeneralEvent = () => {
                     From quizzes to photography, debates to creative writing, explore a wide range of engaging challenges
                 </p>
             </div>
+            
+            {/* Third Section: Images */}
+            <div className="absolute inset-0 flex items-center justify-center z-40 pointer-events-none flex-col md:block">
+                {/* Mudracing Image */}
+                <div ref={MudRef} className="absolute left-0 md:left-[5%] top-[55%] md:top-[10%] w-[85vw] h-[42vh] md:w-[75vw] md:h-[75vh]">
+                    <Image 
+                        src="/about-events/general/mudracing web.webp"
+                        alt="Mudracing"
+                        fill
+                        className="object-contain" 
+                    />
+                </div>
+
+                {/* Roadies Image */}
+                <div ref={RoadRef} className="absolute right-0 md:right-[4%] top-[65%] md:top-[12%] w-[100vw] h-[50vh] md:w-[90vw] md:h-[90vh]">
+                    <Image 
+                        src="/about-events/general/roadies web.webp"
+                        alt="Roadies"
+                        fill
+                        className="object-contain"
+                    />
+                </div>
+            </div>
 
         </div>
 
         {/* Details Section - Scrolls over the fixed intro (Curtain Effect) */}
-        <div className="relative z-10 min-h-screen" style={{ backgroundColor: "#E3CFAF" }}>
+        <div className="relative z-10 md:min-h-screen" style={{ backgroundColor: "#E3CFAF" }}>
             <GeneralEventDetails />
         </div>
-         {/* Third Section: Posters */}
-                    
 
     </div>
   );

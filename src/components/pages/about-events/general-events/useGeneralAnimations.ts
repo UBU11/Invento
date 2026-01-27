@@ -115,6 +115,20 @@ export const useGeneralAnimations = (done: boolean) => {
                     { y: -100, autoAlpha: 1, duration: 1, ease: "power2.inOut" }, "-=0.5"
                 ); 
             }
+
+            if (MudRef.current) {
+                tl.fromTo(MudRef.current, 
+                    { x: "-100vw", y: "0vh", autoAlpha: 1 }, 
+                    { x: "0vw", y: "0vh", duration: 1.5, ease: "power2.out" }, ">"
+                );
+            }
+
+            if (RoadRef.current) {
+                tl.fromTo(RoadRef.current, 
+                    { x: "100vw", y: "0vh", autoAlpha: 1 }, 
+                    { x: "0vw", y: "0vh", duration: 1.5, ease: "power2.out" }, ">"
+                );
+            }
             
         });
         

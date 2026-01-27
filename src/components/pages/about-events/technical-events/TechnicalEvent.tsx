@@ -9,6 +9,8 @@ import { useTechnicalAnimations } from "./useTechnicalAnimations";
 const ASSETS = [
   "/about-events/technical/technical-girl.webp",
   "/about-events/technical/technical-bg.webp",
+  "/about-events/technical/competitions.webp",
+  "/about-events/technical/workshops.webp",
 ];
 
 const TechnicalEvent = () => {
@@ -21,7 +23,9 @@ const TechnicalEvent = () => {
     mobileGradientRef, 
     girlRef, 
     titleRef, 
-    descriptionRef
+    descriptionRef,
+    competitionsRef,
+    workshopsRef
   } = useTechnicalAnimations(done);
 
   if (!done) {
@@ -56,7 +60,7 @@ const TechnicalEvent = () => {
             <div className="absolute inset-0 flex flex-col items-center justify-center h-full w-full">
                 
                 {/* GIRL IMAGE COMPONENT */}
-                <div ref={girlRef} className="relative w-[450px] h-[540px] md:w-[500px] md:h-[580px] z-10 md:-translate-y-[150px]" style={{ marginTop: '100px' }}> 
+                <div ref={girlRef} className="relative w-[340px] h-[408px] md:w-[500px] md:h-[580px] z-10 md:-translate-y-[150px]" style={{ marginTop: '100px' }}> 
                     <Image
                         src="/about-events/technical/technical-girl.webp"
                         alt="Technical Girl"
@@ -66,7 +70,7 @@ const TechnicalEvent = () => {
                     />
                 </div>
 
-                <h1 ref={titleRef} className="font-akira text-white text-5xl md:text-7xl lg:text-9xl tracking-wider leading-none md:-translate-y-[120px] z-20 text-center" style={{ marginTop: '0px' }}>
+                <h1 ref={titleRef} className="font-akira text-white text-5xl md:text-7xl lg:text-9xl tracking-wider leading-none md:-translate-y-[120px] z-20 text-center" style={{ marginTop: '20px' }}>
                 TECHNICAL
                 </h1>
             </div>
@@ -83,6 +87,29 @@ const TechnicalEvent = () => {
                     <br className="block my-2" />
                     From hackathons to coding contests, robotics to AI challenges, push your technical boundaries
                 </p>
+            </div>
+            
+            {/* Third Section: Images */}
+            <div className="absolute inset-0 flex items-center justify-center z-40 pointer-events-none flex-col md:block">
+                {/* Competitions Image */}
+                <div ref={competitionsRef} className="absolute left-0 md:left-[5%] top-[50%] md:top-[10%] w-[100vw] h-[50vh] md:w-[90vw] md:h-[90vh]">
+                    <Image 
+                        src="/about-events/technical/competitions.webp"
+                        alt="Competitions"
+                        fill
+                        className="object-contain" 
+                    />
+                </div>
+
+                {/* Workshops Image */}
+                <div ref={workshopsRef} className="absolute right-0 md:right-[4%] top-[68%] md:top-[12%] w-[85vw] h-[42vh] md:w-[75vw] md:h-[75vh]">
+                    <Image 
+                        src="/about-events/technical/workshops.webp"
+                        alt="Workshops"
+                        fill
+                        className="object-contain"
+                    />
+                </div>
             </div>
 
         </div>

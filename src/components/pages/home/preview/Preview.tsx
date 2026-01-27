@@ -187,7 +187,7 @@ const Preview = () => {
         <section className="min-h-screen relative desktop-section">
           <div className="absolute flex -bottom-18 w-full px-42 justify-end z-30">
             <Link
-              href="/coming-soon"
+              href="/about-events?category=technical"
               className="bg-[#A41F22] px-3 py-2 text-sm lg:p-3 lg:text-base font-akira text-white left-btn relative z-50"
               style={{ pointerEvents: 'auto' }}
             >
@@ -195,7 +195,7 @@ const Preview = () => {
             </Link>
           </div>
 
-          <Link scroll={false} href="/coming-soon">
+          <Link scroll={false} href="/about-events?category=technical">
             <Image
               src={technicalWeb}
               width={1200}
@@ -207,7 +207,7 @@ const Preview = () => {
         </section>
 
         <section className="min-h-screen relative desktop-section" style={{ zIndex: 10, minHeight: 'calc(100vh + 120px)', paddingBottom: '120px' }}>
-          <Link scroll={false} href="/coming-soon">
+          <Link scroll={false} href="/about-events?category=general">
             <Image
               src={generalWeb}
               width={1200}
@@ -219,7 +219,7 @@ const Preview = () => {
 
           <div className="absolute flex bottom-0 w-full px-24 justify-end" style={{ zIndex: 100 }}>
             <Link
-              href="/coming-soon"
+              href="/about-events?category=general"
               className="bg-[#A41F22] px-3 py-2 text-sm lg:p-3 lg:text-base font-akira text-white left-btn"
             >
               KNOW MORE
@@ -249,7 +249,7 @@ const Preview = () => {
         </div>
 
         <div className="w-full flex flex-col items-start gap-4 px-4">
-          <Link scroll={false} href="/coming-soon">
+          <Link scroll={false} href="/about-events?category=technical">
             <Image
               src={technicalMobile}
               width={330}
@@ -259,7 +259,7 @@ const Preview = () => {
             />
           </Link>
           <Link
-            href="/coming-soon"
+            href="/about-events?category=technical"
             className="bg-[#A41F22] px-3 py-2 text-sm font-akira text-white"
           >
             KNOW MORE
@@ -267,7 +267,7 @@ const Preview = () => {
         </div>
 
         <div className="w-full flex flex-col items-end gap-4 px-4">
-          <Link scroll={false} href="/coming-soon">
+          <Link scroll={false} href="/about-events?category=general">
             <Image
               src={generalMobile}
               width={330}
@@ -277,7 +277,7 @@ const Preview = () => {
             />
           </Link>
           <Link
-            href="/coming-soon"
+            href="/about-events?category=general"
             className="bg-[#A41F22] px-3 py-2 text-sm font-akira text-white"
           >
             KNOW MORE
