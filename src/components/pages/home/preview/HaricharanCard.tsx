@@ -27,7 +27,7 @@ const HaricharanCard: React.FC = () => (
       </p>
       <Link
         scroll={false}
-        href={"/events"}
+        href={"https://app.makemypass.com/event/after-hours"}
         className="absolute bottom-4 md:bottom-15 bg-[#A41F22] text-white text-[5px] lg:text-xl font-bold uppercase px-1 py-1 lg:px-8 lg:py-3"
       >
         REGISTER

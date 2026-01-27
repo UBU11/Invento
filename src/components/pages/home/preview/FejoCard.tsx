@@ -74,7 +74,7 @@ const FejoCard: React.FC = () => {
           </h4>
           <Link
             scroll={false}
-            href={"/event"}
+            href={"https://app.makemypass.com/event/after-hours"}
             className="absolute bottom-2 md:bottom-12 bg-white text-black text-[5px] lg:text-xl font-bold uppercase px-1 py-1 lg:px-8 lg:py-3"
           >
             REGISTER
